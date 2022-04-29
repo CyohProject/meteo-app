@@ -1,0 +1,25 @@
+{
+  "name": "api-meteo-app",
+  "description": "api. Backend for the app",
+  "authors": "Cyoh Project Team",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "NODE_ENV=test PORT=1234 jest --verbose tests/user.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "5.0.1",
+    "cors": "2.8.5",
+    "dotenv": "16.0.0",
+    "express": "4.17.2",
+    "jsonwebtoken": "8.5.1",
+    "mongoose": "6.2.7",
+    "mongoose-unique-validator": "3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  }
+}

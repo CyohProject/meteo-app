@@ -1,0 +1,25 @@
+{
+  "name": "meteo-app",
+  "version": "0.0.0",
+  "description": "Meteorologic app with user interaction",
+  "repository": "https://github.com/CyohProject/meteo-app.git",
+  "authors": "Cyoh Project Team",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "engines": {
+    "yarn": "1.22.17"
+  },
+  "scripts": {
+    "lint": "standard .\\app .\\api"
+  },
+  "devDependencies": {
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": ".\\node_modules\\standard\\eslintrc.json"
+  }
+}
