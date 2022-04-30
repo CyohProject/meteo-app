@@ -1,11 +1,8 @@
 import './App.css'
+import Maps from './components/Maps'
 
-function App () {
-  return (
-    <div className='App'>
-      <h1>HOLI 0w0</h1>
-    </div>
-  )
+const App = () => {
+  return <Maps />
 }
 
 export default App
