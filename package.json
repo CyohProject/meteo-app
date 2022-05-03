@@ -14,7 +14,9 @@
     "yarn": "1.22.17"
   },
   "scripts": {
-    "lint": "standard .\\app .\\api"
+    "lint": "standard .\\app .\\api",
+    "front": "cd app && yarn start",
+    "back": "node api/index.js"
   },
   "devDependencies": {
     "standard": "17.0.0"
