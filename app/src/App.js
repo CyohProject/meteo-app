@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
 import { currCoords } from './reducers/locationReducer.js'
 import Maps from './components/Maps'
+import InitComp from './components/InitComp'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ const App = () => {
         {/* <Route path='/' element={<MainPage />} /> */}
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
       </Routes>
+      <InitComp />
     </BrowserRouter>
   )
 }
