@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa'
 import { useState } from 'react'
 import { MenuData } from './MenuData'
 import './Menu.css'
+import { IconContext } from 'react-icons/lib'
 
 export default function Menu () {
   const [menu, setMenu] = useState(false)
@@ -25,7 +26,7 @@ export default function Menu () {
   }
 
   return (
-    <>
+    <IconContext.Provider value={{ color: 'white' }}>
       <Link to='#' id='menu-open'>
         <FaIcons.FaBars onClick={showMenu} />
       </Link>
@@ -39,6 +40,6 @@ export default function Menu () {
           {showMenuData()}
         </ul>
       </nav>
-    </>
+    </IconContext.Provider>
   )
 }
