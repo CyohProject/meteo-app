@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "2.0.16"
+    "nodemon": "2.0.16",
+    "react-icons": "4.3.1"
   }
 }
