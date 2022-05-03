@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import { useState } from 'react'
 import { MenuData } from './MenuData'
+import './Menu.css'
 
 export default function Menu () {
   const [menu, setMenu] = useState(false)
