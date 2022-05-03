@@ -7,6 +7,13 @@ import logo from './assets/logo.png'
 import Menu from './components/Menu'
 import MainPage from './components/MainPage'
 import Maps from './components/Maps'
+import Alerts from './components/Alerts'
+
+/**
+ * TODO:
+ * Escribir ternario para MainPage o Init si
+ * se han obtenido los datos o no
+ */
 
 const App = () => {
   const dispatch = useDispatch()
@@ -24,8 +31,9 @@ const App = () => {
         <Menu />
       </header>
       <Routes>
-        <Route path='/main' element={<MainPage />} />
+        <Route path='/' element={<MainPage />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
+        <Route path='/alerts' element={<Alerts />} />
       </Routes>
     </BrowserRouter>
   )
