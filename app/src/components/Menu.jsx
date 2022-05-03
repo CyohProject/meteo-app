@@ -5,6 +5,14 @@ import { MenuData } from './MenuData'
 import './Menu.css'
 import { IconContext } from 'react-icons/lib'
 
+/**
+ * TODO:
+ * Gestionar menú iniciado sesión
+ *  Crear MenuDataLogged
+ *  Crear showMenuDataLogged
+ *  Crear logOut
+ */
+
 export default function Menu () {
   const [menu, setMenu] = useState(false)
 
