@@ -1,12 +1,6 @@
-import { getCurrCoords, obtainCurrPosName } from '../services/location'
+import { getCurrCoords, getCurrPosName } from '../services/location'
 
-const initialState = {
-  API_key: 'e6715c036f2a31c0ae2045316f6690e8',
-  currCoords: {},
-  currPosName: {}
-};
-
-export const locationReducer = (state = initialState, action) => {
+export const locationReducer = (state = [], action) => {
   if (action.type === '@location/currCoords') {
     return { ...state, currCoords: action.payload }
   }
@@ -27,15 +21,9 @@ const currCoords = () => {
   }
 }
 
-const getCurrPosName = (API_key) => {
-  ///////////////////////////////////////////////////////////////////////////
-  // debería consultar el estado y si no tiene coords, entonces, se busca ///
-  //
-  // let coords = ( coords == null ) ? getCurrCoords() : coords;          ///
-  ///////////////////////////////////////////////////////////////////////////
-  let coords = getCurrCoords();
+const currPosName = (coords) => {
   return async (dispatch) => {
-    const posName = await obtainCurrPosName(API_key, coords)
+    const posName = await getCurrPosName(coords)
 
     dispatch({
       type: '@location/currPosName',
@@ -44,4 +32,4 @@ const getCurrPosName = (API_key) => {
   }
 }
 
-export { currCoords, getCurrPosName  }
+export { currCoords, currPosName }

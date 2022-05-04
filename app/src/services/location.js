@@ -1,5 +1,5 @@
-import axios from 'axios';
-
+import axios from 'axios'
+import { API_KEY } from './../internal/data.json'
 /**
  * Get current user position from the browser
  * @returns a Promise with the position on the map
@@ -24,13 +24,12 @@ const getCurrCoords = async () => {
   }
 }
 
-const obtainCurrPosName = (API_key, coords) => {
-  let data = axios.get(
-    `http://api.openweathermap.org/geo/1.0/reverse?` +
-    `lat=${coords.lat}&lon=${coords.lon}&limit=1&appid=${API_key}`);
-    console.log(data);
-  return data;
+const getCurrPosName = async (coords) => {
+  const res = await axios.get(
+    'http://api.openweathermap.org/geo/1.0/reverse?' +
+    `lat=${coords.lat}&lon=${coords.lon}&limit=1&appid=${API_KEY}`)
+  //  console.log(res.data)
+  return res.data[0]
 }
 
-
-export { getCurrCoords, obtainCurrPosName }
+export { getCurrCoords, getCurrPosName }
