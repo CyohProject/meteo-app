@@ -20,6 +20,7 @@ function currPos () {
  */
 const getCurrCoords = async () => {
   const { coords } = await currPos()
+
   return {
     lat: coords.latitude,
     lon: coords.longitude
