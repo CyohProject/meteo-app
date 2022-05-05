@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import { useState } from 'react'
 import { MenuData } from './MenuData'
-import './Menu.css'
+import '../styles/Menu.css'
 import { IconContext } from 'react-icons/lib'
 
 /**

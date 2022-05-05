@@ -1,0 +1,6 @@
+footer {
+    background-color: #060b26;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
