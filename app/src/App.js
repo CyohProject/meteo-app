@@ -8,6 +8,7 @@ import Menu from './components/Menu'
 import MainPage from './components/MainPage'
 import Maps from './components/Maps'
 import Alerts from './components/Alerts'
+import AboutUs from './components/AboutUs'
 
 /**
  * TODO:
@@ -34,6 +35,7 @@ const App = () => {
         <Route path='/' element={<MainPage />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
+        <Route path='/aboutus' element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   )
