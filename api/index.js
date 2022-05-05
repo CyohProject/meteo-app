@@ -6,7 +6,7 @@ const PORT = process.env.PORT
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const locationRouter = require('express').Router()
+const locationRouter = require('./controllers/location')
 
 // Middlewares - The middlewares' order is always important
 app.use(cors()) // public
