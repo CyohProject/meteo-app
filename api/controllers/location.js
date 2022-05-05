@@ -19,7 +19,7 @@ locationRouter.get('/', async (req, res) => {
   // Get all current weather data
   const currMeteo = await axios.get(
     'https://api.openweathermap.org/data/2.5/onecall?' +
-  `lat=${coords.lat}&lon=${coords.lon}` +
+  `lat=${coords.lat}&lon=${coords.lon}&` +
   `exclude=minutely&units=metric&appid=${process.env.API_KEY}`
   )
 
