@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { obtainLocInfoManual } from '../reducers/locationReducer.js'
 
 /**
@@ -12,12 +13,17 @@ import { obtainLocInfoManual } from '../reducers/locationReducer.js'
  */
 export default function Location () {
   const [locName, setLocName] = useState('')
+
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const handleLoc = (e) => {
     e.preventDefault()
 
     dispatch(obtainLocInfoManual(locName))
     setLocName('')
+
+    navigate('/')
   }
 
   return (
