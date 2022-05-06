@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { obtainLocInfoAllManual } from '../reducers/locationReducer.js'
+import { obtainLocInfoManual } from '../reducers/locationReducer.js'
 
 /**
  * TODO
@@ -16,7 +16,7 @@ export default function Location () {
   const handleLoc = (e) => {
     e.preventDefault()
 
-    dispatch(obtainLocInfoAllManual(locName))
+    dispatch(obtainLocInfoManual(locName))
     setLocName('')
   }
 
