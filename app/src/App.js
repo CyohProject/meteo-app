@@ -6,9 +6,9 @@ import { currCoords, obtainLocInfoAll } from './reducers/locationReducer.js'
 import logo from './assets/logo.png'
 import Menu from './components/Menu'
 import MainPage from './components/MainPage'
+import Location from './components/Location'
 import Maps from './components/Maps'
 import Alerts from './components/Alerts'
-import Location from './components/Location'
 import AboutUs from './components/AboutUs'
 
 const App = () => {
