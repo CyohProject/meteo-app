@@ -39,7 +39,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <header>
-        <Link id='logo' to='/main'><img src={logo} alt='logo' /></Link>
+        <Link id='logo' to='/'><img src={logo} alt='logo' /></Link>
         <Menu />
       </header>
       <Routes>
