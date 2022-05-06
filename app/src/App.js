@@ -33,6 +33,9 @@ const App = () => {
   useEffect(() => {
     if (coords) {
       dispatch(obtainLocInfoAll(coords))
+      setInterval(() => {
+        dispatch(obtainLocInfoAll(coords))
+      }, 600000)
     }
   }, [dispatch, coords])
 
