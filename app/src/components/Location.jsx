@@ -28,7 +28,7 @@ export default function Location () {
         name='location'
         placeholder='Localización'
         id='location-manual'
-        onChange={({ target }) => setLocName(target)}
+        onChange={({ target }) => setLocName(target.value)}
       />
     </form>
   )
