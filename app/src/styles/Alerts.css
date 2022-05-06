@@ -1,0 +1,7 @@
+#alertDetail {
+  display: none;
+}
+
+#alertDetailActive {
+  display: block;
+}
