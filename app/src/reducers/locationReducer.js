@@ -10,7 +10,8 @@ export const locationReducer = (state = [], action) => {
     return {
       ...state,
       loc: action.payload.loc,
-      currMeteo: action.payload.currMeteo
+      currMeteo: action.payload.currMeteo,
+      alerts: action.payload.currMeteo.alerts
     }
   }
 
