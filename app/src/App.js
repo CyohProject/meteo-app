@@ -8,13 +8,8 @@ import Menu from './components/Menu'
 import MainPage from './components/MainPage'
 import Maps from './components/Maps'
 import Alerts from './components/Alerts'
+import Location from './components/Location'
 import AboutUs from './components/AboutUs'
-
-/**
- * TODO:
- * Escribir ternario para MainPage si
- * se han obtenido los datos o no
- */
 
 const App = () => {
   const dispatch = useDispatch()
@@ -46,7 +41,7 @@ const App = () => {
         <Menu />
       </header>
       <Routes>
-        <Route path='/' element={(loc && currMeteo) ? <MainPage /> : null} />
+        <Route path='/' element={(loc && currMeteo) ? <MainPage /> : <Location coords={coords} />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
         <Route path='/aboutus' element={<AboutUs />} />
