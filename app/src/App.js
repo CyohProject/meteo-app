@@ -41,8 +41,8 @@ const App = () => {
         <Menu />
       </header>
       <Routes>
-        <Route path='/' element={(loc && currMeteo) ? <MainPage /> : <Location coords={coords} />} />
-        <Route path='/location' element={<Location coords={coords} />} />
+        <Route path='/' element={(coords && loc && currMeteo) ? <MainPage /> : <Location />} />
+        <Route path='/location' element={<Location />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
         <Route path='/aboutus' element={<AboutUs />} />
