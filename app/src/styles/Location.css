@@ -1,8 +1,8 @@
-#marker {
+.marker {
   display: none;
 }
 
-#marker-active {
+.marker-active {
   display: block;
 }
 

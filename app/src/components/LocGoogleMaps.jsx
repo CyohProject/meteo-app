@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
 
-const Marker = ({ text }) => (
+const Marker = ({ text, active }) => (
   <IconContext.Provider value={{ color: 'red' }}>
-    <li id='marker-li'>
+    <li id='marker-li' className={active ? 'marker-active' : 'marker'}>
       <FaMapMarkerAlt id='marker-ico' />
       <span id='marker-loc'>{text}</span>
     </li>
@@ -13,15 +13,26 @@ const Marker = ({ text }) => (
 )
 
 export default function LocGoogleMaps () {
-  const props = {
+  const [marker, setMarker] = useState(false)
+  const [props, setProps] = useState({
     center: {
       lat: 41.9,
       lng: 1.50
     },
-    zoom: 5
-  }
+    zoom: 7
+  })
 
   const _onClick = ({ lat, lng }) => {
+    if (marker === false) {
+      setMarker(!marker)
+    }
+    setProps({
+      center: {
+        lat,
+        lng
+      },
+      zoom: 9
+    })
   }
 
   return (
@@ -34,10 +45,10 @@ export default function LocGoogleMaps () {
         onClick={_onClick}
       >
         <Marker
-          id='marker-active'
           lat={props.center.lat}
           lng={props.center.lng}
           text='My Marker'
+          active={marker}
         />
       </GoogleMapReact>
     </div>
