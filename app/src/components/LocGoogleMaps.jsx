@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
+import { MdOutlineLocationOn } from 'react-icons/md'
+import { IconContext } from 'react-icons/lib'
 
 const Marker = ({ text }) => (
-  <li style={{ listStyle: 'none' }}>
-    <span>{text}</span>
-  </li>
+  <IconContext.Provider value={{ color: 'red' }}>
+    <li style={{ listStyle: 'none' }}>
+      <MdOutlineLocationOn style={{ width: 50 + 'px', height: 50 + 'px' }} />
+      <span style={{ backgroundColor: 'white', borderRadius: 6 }}>{text}</span>
+    </li>
+  </IconContext.Provider>
 )
 
 export default function LocGoogleMaps () {
