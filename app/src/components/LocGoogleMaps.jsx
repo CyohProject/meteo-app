@@ -5,9 +5,9 @@ import { IconContext } from 'react-icons/lib'
 
 const Marker = ({ text }) => (
   <IconContext.Provider value={{ color: 'red' }}>
-    <li style={{ listStyle: 'none', width: 10 + 'px', height: 10 + 'px' }}>
-      <FaMapMarkerAlt style={{ width: 50 + 'px', height: 50 + 'px' }} />
-      <span style={{ backgroundColor: 'white', borderRadius: 6 }}>{text}</span>
+    <li id='marker-li'>
+      <FaMapMarkerAlt id='marker-ico' />
+      <span id='marker-loc'>{text}</span>
     </li>
   </IconContext.Provider>
 )
@@ -34,6 +34,7 @@ export default function LocGoogleMaps () {
         onClick={_onClick}
       >
         <Marker
+          id='marker-active'
           lat={props.center.lat}
           lng={props.center.lng}
           text='My Marker'
