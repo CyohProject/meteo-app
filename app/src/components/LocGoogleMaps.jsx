@@ -1,33 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 import GoogleMapReact from 'google-map-react'
-import { MdOutlineLocationOn } from 'react-icons/md'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
 
 const Marker = ({ text }) => (
   <IconContext.Provider value={{ color: 'red' }}>
-    <li style={{ listStyle: 'none' }}>
-      <MdOutlineLocationOn style={{ width: 50 + 'px', height: 50 + 'px' }} />
+    <li style={{ listStyle: 'none', width: 10 + 'px', height: 10 + 'px' }}>
+      <FaMapMarkerAlt style={{ width: 50 + 'px', height: 50 + 'px' }} />
       <span style={{ backgroundColor: 'white', borderRadius: 6 }}>{text}</span>
     </li>
   </IconContext.Provider>
 )
 
 export default function LocGoogleMaps () {
-  const [props, setProps] = useState({
+  const props = {
     center: {
-      lat: 59.955413,
-      lng: 30.337
+      lat: 41.9,
+      lng: 1.50
     },
-    zoom: 11
-  })
+    zoom: 5
+  }
 
-  const _onClick = ({ lat, lng }) => setProps({
-    center: {
-      lat,
-      lng
-    },
-    zoom: 9
-  })
+  const _onClick = ({ lat, lng }) => {
+  }
 
   return (
     // Important! Always set the container height explicitly
