@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { obtainLocInfoManual } from '../reducers/locationReducer.js'
 import LocGoogleMaps from './LocGoogleMaps.jsx'
+import '../styles/Location.css'
 
 /**
  * TODO
