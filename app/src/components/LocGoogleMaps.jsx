@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 
 const Marker = ({ text }) => (
@@ -8,13 +8,21 @@ const Marker = ({ text }) => (
 )
 
 export default function LocGoogleMaps () {
-  const props = {
+  const [props, setProps] = useState({
     center: {
       lat: 59.955413,
       lng: 30.337
     },
     zoom: 11
-  }
+  })
+
+  const _onClick = ({ lat, lng }) => setProps({
+    center: {
+      lat,
+      lng
+    },
+    zoom: 9
+  })
 
   return (
     // Important! Always set the container height explicitly
@@ -23,6 +31,7 @@ export default function LocGoogleMaps () {
         bootstrapURLKeys={{ key: process.env.REACT_APP_G_API_KEY }}
         center={props.center}
         zoom={props.zoom}
+        onClick={_onClick}
       >
         <Marker
           lat={props.center.lat}
