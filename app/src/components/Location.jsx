@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { obtainLocInfoManual } from '../reducers/locationReducer.js'
+import LocGoogleMaps from './LocGoogleMaps.jsx'
 
 /**
  * TODO
@@ -27,15 +28,18 @@ export default function Location () {
   }
 
   return (
-    <form onSubmit={handleLoc}>
-      <input
-        type='text'
-        value={locName}
-        name='location'
-        placeholder='Localización'
-        id='location-manual'
-        onChange={({ target }) => setLocName(target.value)}
-      />
-    </form>
+    <>
+      <form onSubmit={handleLoc}>
+        <input
+          type='text'
+          value={locName}
+          name='location'
+          placeholder='Localización'
+          id='location-manual'
+          onChange={({ target }) => setLocName(target.value)}
+        />
+      </form>
+      <LocGoogleMaps />
+    </>
   )
 }
