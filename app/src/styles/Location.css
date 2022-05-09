@@ -1,3 +1,8 @@
+/* Input */
+#location-manual {
+  border-radius: 3px;
+}
+/* MAP */
 .marker {
   display: none;
 }
