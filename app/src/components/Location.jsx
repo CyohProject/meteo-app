@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { obtainLocInfoManual } from '../reducers/locationReducer.js'
 import '../styles/Location.css'
 import { FaMapMarkerAlt } from 'react-icons/fa'
+import { IconContext } from 'react-icons/lib'
 
 /**
  * TODO
@@ -29,24 +30,27 @@ export default function Location () {
 
   const _onClick = e => {
     e.preventDefault()
-    navigate('/')
+    document.location.reload()
   }
 
   return (
-    <div id='location'>
-      <form onSubmit={handleLoc}>
-        <input
-          type='text'
-          value={locName}
-          name='location'
-          placeholder='Localización'
-          id='location-manual'
-          onChange={({ target }) => setLocName(target.value)}
-        />
-      </form>
-      <button onClick={_onClick}>
-        <FaMapMarkerAlt />
-      </button>
-    </div>
+    <IconContext.Provider value={{ color: 'white' }}>
+      <div id='location'>
+        <form onSubmit={handleLoc}>
+          <input
+            type='text'
+            value={locName}
+            name='location'
+            placeholder='Localización'
+            id='location-manual'
+            onChange={({ target }) => setLocName(target.value)}
+          />
+        </form>
+        <Link to='#' onClick={_onClick}>
+          <FaMapMarkerAlt />
+        </Link>
+      </div>
+    </IconContext.Provider>
+
   )
 }

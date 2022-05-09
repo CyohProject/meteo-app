@@ -1,6 +1,6 @@
 /* Manual */
 #location {
-  justify-content: space-between;
+  display: flex;
 }
 
 #location-manual {
@@ -9,6 +9,8 @@
 
 button {
   background: none;
+  border: none;
+  margin-left: 3px;
 }
 /* MAP */
 .marker {
