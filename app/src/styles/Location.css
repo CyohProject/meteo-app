@@ -1,6 +1,14 @@
-/* Input */
+/* Manual */
+#location {
+  justify-content: space-between;
+}
+
 #location-manual {
   border-radius: 3px;
+}
+
+button {
+  background: none;
 }
 /* MAP */
 .marker {
