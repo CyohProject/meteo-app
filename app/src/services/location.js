@@ -27,7 +27,10 @@ const getCurrCoords = async () => {
   }
 }
 
-const getLocInfoAll = async (coords) => {
+/**
+ * Auto actual info obtaining
+ */
+const getLocInfoAllAuto = async (coords) => {
   const { data } = await axios.get(baseUrl, { params: { coords } })
 
   return data
@@ -39,4 +42,4 @@ const getLocInfoManual = async locName => {
   return data
 }
 
-export { getCurrCoords, getLocInfoAll, getLocInfoManual }
+export { getCurrCoords, getLocInfoAllAuto, getLocInfoManual }

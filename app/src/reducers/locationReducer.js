@@ -1,4 +1,4 @@
-import { getCurrCoords, getLocInfoAll, getLocInfoManual } from '../services/location'
+import { getCurrCoords, getLocInfoAllAuto, getLocInfoManual } from '../services/location'
 
 export const locationReducer = (state = [], action) => {
   // Obtain current coords
@@ -38,9 +38,12 @@ const currCoords = () => {
   }
 }
 
+/**
+ * Auto actual info obtaining
+ */
 const obtainLocInfoAll = (coords) => {
   return async (dispatch) => {
-    const locInfoAll = await getLocInfoAll(coords)
+    const locInfoAll = await getLocInfoAllAuto(coords)
 
     dispatch({
       type: '@location/locInfoAll',
