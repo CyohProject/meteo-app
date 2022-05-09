@@ -10,6 +10,7 @@ import Location from './components/Location'
 import Maps from './components/Maps'
 import Alerts from './components/Alerts'
 import AboutUs from './components/AboutUs'
+import LocGoogleMaps from './components/LocGoogleMaps'
 
 const App = () => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const App = () => {
       </header>
       <Routes>
         <Route path='/' element={(coords && loc && currMeteo) ? <MainPage /> : <Location />} />
-        <Route path='/location' element={<Location />} />
+        <Route path='/locationt' element={<LocGoogleMaps />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
         <Route path='/aboutus' element={<AboutUs />} />

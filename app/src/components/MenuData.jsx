@@ -13,7 +13,7 @@ export const MenuData = [
   },
   {
     title: 'Location',
-    path: '/location',
+    path: '/locationt',
     icon: <MdIcons.MdOutlineLocationOn />,
     cName: 'nav-text'
   },

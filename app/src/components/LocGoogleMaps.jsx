@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
@@ -13,6 +13,8 @@ const Marker = ({ text, active }) => (
 )
 
 export default function LocGoogleMaps () {
+  useEffect(() => window.alert('Not implemented yet'))
+  // const [locName, setLocName] = useState()
   const [marker, setMarker] = useState(false)
   const [props, setProps] = useState({
     center: {
@@ -22,7 +24,10 @@ export default function LocGoogleMaps () {
     zoom: 7
   })
 
-  const _onClick = ({ lat, lng }) => {
+  const _onClick = async ({ lat, lng }) => {
+    // if (marker === false && !locName) {
+    //   setMarker(!marker)
+    // }
     if (marker === false) {
       setMarker(!marker)
     }
@@ -47,7 +52,7 @@ export default function LocGoogleMaps () {
         <Marker
           lat={props.center.lat}
           lng={props.center.lng}
-          text='My Marker'
+          text={props.center.lat + ',' + props.center.lng}
           active={marker}
         />
       </GoogleMapReact>
