@@ -8,8 +8,7 @@ import { IconContext } from 'react-icons/lib'
 
 /**
  * TODO
- * Botón para obtener ubicación y datos actuales
- * Persistir datos de state
+ * Persistir datos establecidos manualmente (?)
  * Si hay un usuario, guardar el nombre de la localización en el usuario
  * Style
  */
