@@ -12,12 +12,6 @@ export const MenuData = [
     cName: 'nav-text'
   },
   {
-    title: 'Location',
-    path: '/locationt',
-    icon: <MdIcons.MdOutlineLocationOn />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Maps',
     path: '/maps',
     icon: <WiDaySleetStorm />,
