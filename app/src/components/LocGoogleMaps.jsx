@@ -3,6 +3,13 @@ import GoogleMapReact from 'google-map-react'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
 
+/** TODO
+ * Mapa Google Maps ->
+ *  Clicar en cualquier parte obtiene coordenadas y posterior info
+ *  Agregar url del proyecto desplegado a las URL que pueden usar
+ *    Google Maps API (en plataforma Google)
+*/
+
 const Marker = ({ text, active }) => (
   <IconContext.Provider value={{ color: 'red' }}>
     <li id='marker-li' className={active ? 'marker-active' : 'marker'}>

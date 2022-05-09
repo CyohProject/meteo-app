@@ -6,11 +6,10 @@ import '../styles/Location.css'
 
 /**
  * TODO
- * Mapa Google Maps -> Clicar en cualquier parte obtiene coordenadas y posterior info
  * Botón para obtener ubicación y datos actuales
+ * Persistir datos de state
  * Si hay un usuario, guardar el nombre de la localización en el usuario
  * Style
- * Agregar url del proyecto desplegado a las URL que pueden usar Google Maps API (en plataforma Google)
  */
 export default function Location () {
   const [locName, setLocName] = useState('')
