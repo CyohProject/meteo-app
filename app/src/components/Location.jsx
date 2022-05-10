@@ -8,8 +8,9 @@ import { IconContext } from 'react-icons/lib'
 
 /**
  * TODO
- * Persistir datos establecidos manualmente (?)
- * Si hay un usuario, guardar el nombre de la localización en el usuario
+ * Despliegue de localizaciones por escritura
+ * Persistir datos establecidos manualmente sin sesión (?)
+ * Si hay un usuario, guardar el nombre de la localización en su lista
  * Style
  */
 export default function Location () {
