@@ -20,11 +20,8 @@ export default function Comments () {
     setSingleComments(e.target.value)
   }
 
-  const handleComment = (e) => {
+  const sendComment = (e) => {
     e.preventDefault()
-  }
-
-  const sendComment = () => {
     if (singleComment === '') {
       console.warn('Not a valid value')
     } else {
@@ -51,11 +48,10 @@ export default function Comments () {
   return (
     <>
       <h1>Comentarios</h1>
-      <br />
       <div id='commentContainer'>
         <CommentList data={comments} />
       </div>
-      <form onSubmit={handleComment} id='commentForm'>
+      <form onSubmit={sendComment} id='commentForm'>
         <input
           type='text'
           value={singleComment}
