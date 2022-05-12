@@ -52,9 +52,9 @@ const obtainLocInfoAll = (coords) => {
   }
 }
 
-const obtainLocInfoManual = locName => {
+const obtainLocInfoManual = city => {
   return async (dispatch) => {
-    const locInfoAllM = await getLocInfoManual(locName)
+    const locInfoAllM = await getLocInfoManual(city)
 
     dispatch({
       type: '@location/locInfoAllM',

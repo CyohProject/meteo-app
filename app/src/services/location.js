@@ -36,8 +36,8 @@ const getLocInfoAllAuto = async (coords) => {
   return data
 }
 
-const getLocInfoManual = async locName => {
-  const { data } = await axios.get(baseUrl, { params: { locName } })
+const getLocInfoManual = async city => {
+  const { data } = await axios.get(baseUrl, { params: { city } })
 
   return data
 }

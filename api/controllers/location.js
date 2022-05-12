@@ -6,16 +6,16 @@ uses the axios library to make two API calls to the OpenWeatherMap API. It then 
 to the user. */
 locationRouter.get('/', async (req, res) => {
   // Manual
-  if (req.query.locName) {
-    const { locName } = req.query
+  if (req.query.city) {
+    let { city } = req.query
+    city = JSON.parse(city)
 
     // Get location data manually
     const loc = await axios.get(
       'http://api.openweathermap.org/geo/1.0/direct?' +
-      `q=${locName}&limit=1&` +
+      `q=${city.name},${city.country_code}&limit=1&` +
       `appid=${process.env.API_KEY}`
     )
-
     res.send({
       coords: {
         lat: loc.data[0].lat,
@@ -26,6 +26,10 @@ locationRouter.get('/', async (req, res) => {
 
   // Auto
   } else {
+    /**
+     * TODO:
+     * arreglar warning relacionado con JSON.parse
+     */
     let { coords } = req.query
     /* Parsing the coords object from a string to an object. */
     coords = JSON.parse(coords)
