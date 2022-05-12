@@ -43,7 +43,7 @@ export default function Comments () {
   }
 
   const CommentList = (props) => {
-    const commentList = props.data.map((comment, i) => <li key={i}>{comment}</li>)
+    const commentList = props.data.map((comment, i) => <li class='liComments' key={i}>{comment}</li>)
 
     return <ul>{commentList}</ul>
   }

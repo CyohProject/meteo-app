@@ -29,10 +29,8 @@
     outline: none;
 }
 
-li {
+.liComments {
     list-style-type: none;
     margin: 3em;
     padding: 3em;
 }
-
-
