@@ -7,7 +7,7 @@
 }
 
 #commentContainer {
-    height: 70vh;
+    height: 75vh;
 }
 
 #sendButton {
@@ -31,6 +31,5 @@
 
 .liComments {
     list-style-type: none;
-    margin: 3em;
     padding: 3em;
 }
