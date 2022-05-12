@@ -16,7 +16,7 @@ export default function AboutUs () {
       </div>
       <footer>
         <a id='githubIcon' href='https://github.com/CyohProject/meteo-app'><img src={githubIcon} alt='githubIcon' /></a>
-        <a id='githubLink' href='https://github.com/CyohProject/meteo-app'>Github</a>
+        <a id='githubLink' href='https://github.com/CyohProject/meteo-app'>GitHub</a>
         {/* <div id='footerText'>
           <p>Lorenzo García</p>
           <p>Oriol Salvador</p>
