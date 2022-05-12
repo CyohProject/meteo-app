@@ -17,10 +17,7 @@ export default function weatherData (data) {
       lon: location.lon
     },
     current: {
-      icon: <img
-        src={'http://openweathermap.org/img/wn/' +
-          current.weather[0].icon + '.png'} alt='weather-icon'
-            />,
+      icon: current.weather[0].icon,
       description: current.weather[0].description,
       temperature: current.temp,
       // Basic data
@@ -42,10 +39,7 @@ export default function weatherData (data) {
     },
     daily: {
       1: {
-        icon: <img
-          src={'http://openweathermap.org/img/wn/' +
-            daily[1].weather[0].icon + '.png'} alt='weather-icon'
-              />,
+        icon: daily[1].weather[0].icon,
         description: daily[1].weather[0].description,
         temperature: averageTemperature(
           daily[1].temp.max,
@@ -69,10 +63,8 @@ export default function weatherData (data) {
         }
       },
       2: {
-        icon: <img
-          src={'http://openweathermap.org/img/wn/' +
-            daily[2].weather[0].icon + '.png'} alt='weather-icon'
-              />,
+        icon:
+            daily[2].weather[0].icon,
         description: daily[2].weather[0].description,
         temperature: averageTemperature(
           daily[2].temp.max,
@@ -96,10 +88,7 @@ export default function weatherData (data) {
         }
       },
       3: {
-        icon: <img
-          src={'http://openweathermap.org/img/wn/' +
-            daily[3].weather[0].icon + '.png'} alt='weather-icon'
-              />,
+        icon: daily[3].weather[0].icon,
         description: daily[3].weather[0].description,
         temperature: averageTemperature(
           daily[3].temp.max,
@@ -123,10 +112,8 @@ export default function weatherData (data) {
         }
       },
       4: {
-        icon: <img
-          src={'http://openweathermap.org/img/wn/' +
-            daily[4].weather[0].icon + '.png'} alt='weather-icon'
-              />,
+        icon:
+            daily[4].weather[0].icon,
         description: daily[4].weather[0].description,
         temperature: averageTemperature(
           daily[4].temp.max,
@@ -148,78 +135,78 @@ export default function weatherData (data) {
           uvi: daily[4].uvi,
           moonPhase: daily[4].moon_phase
         }
-      }
-    },
-    5: {
-      icon: daily[5].weather[0].icon,
-      description: daily[5].weather[0].description,
-      temperature: averageTemperature(
-        daily[5].temp.max,
-        daily[5].temp.min
-      ),
-      minTemperature: daily[5].temp.min,
-      maxTemperature: daily[5].temp.max,
-      humidity: daily[5].humidity,
-      pressure: daily[5].pressure,
-      sunrise: daily[5].sunrise,
-      sunset: daily[5].sunset,
-      wind_speed: daily[5].wind_speed,
-      wind_direction: daily[5].wind_deg,
-      details: { // Detailed data
-        clouds_intensity: daily[5].clouds,
-        visibility: '',
-        dew_point: '',
-        feels_like: calculateFeelsLike(daily, 5),
-        uvi: daily[5].uvi,
-        moonPhase: daily[5].moon_phase
-      }
-    },
-    6: {
-      icon: daily[6].weather[0].icon,
-      description: daily[6].weather[0].description,
-      temperature: averageTemperature(
-        daily[6].temp.max,
-        daily[6].temp.min
-      ),
-      minTemperature: daily[6].temp.min,
-      maxTemperature: daily[6].temp.max,
-      humidity: daily[6].humidity,
-      pressure: daily[6].pressure,
-      sunrise: daily[6].sunrise,
-      sunset: daily[6].sunset,
-      wind_speed: daily[6].wind_speed,
-      wind_direction: daily[6].wind_deg,
-      details: { // Detailed data
-        clouds_intensity: daily[6].clouds,
-        visibility: '',
-        dew_point: '',
-        feels_like: calculateFeelsLike(daily, 6),
-        uvi: daily[6].uvi,
-        moonPhase: daily[6].moon_phase
-      }
-    },
-    7: {
-      icon: daily[7].weather[0].icon,
-      description: daily[7].weather[0].description,
-      temperature: averageTemperature(
-        daily[7].temp.max,
-        daily[7].temp.min
-      ),
-      minTemperature: daily[7].temp.min,
-      maxTemperature: daily[7].temp.max,
-      humidity: daily[7].humidity,
-      pressure: daily[7].pressure,
-      sunrise: daily[7].sunrise,
-      sunset: daily[7].sunset,
-      wind_speed: daily[7].wind_speed,
-      wind_direction: daily[7].wind_deg,
-      details: { // Detailed data
-        clouds_intensity: daily[7].clouds,
-        visibility: '',
-        dew_point: '',
-        feels_like: calculateFeelsLike(daily, 7),
-        uvi: daily[7].uvi,
-        moonPhase: daily[7].moon_phase
+      },
+      5: {
+        icon: daily[5].weather[0].icon,
+        description: daily[5].weather[0].description,
+        temperature: averageTemperature(
+          daily[5].temp.max,
+          daily[5].temp.min
+        ),
+        minTemperature: daily[5].temp.min,
+        maxTemperature: daily[5].temp.max,
+        humidity: daily[5].humidity,
+        pressure: daily[5].pressure,
+        sunrise: daily[5].sunrise,
+        sunset: daily[5].sunset,
+        wind_speed: daily[5].wind_speed,
+        wind_direction: daily[5].wind_deg,
+        details: { // Detailed data
+          clouds_intensity: daily[5].clouds,
+          visibility: '',
+          dew_point: '',
+          feels_like: calculateFeelsLike(daily, 5),
+          uvi: daily[5].uvi,
+          moonPhase: daily[5].moon_phase
+        }
+      },
+      6: {
+        icon: daily[6].weather[0].icon,
+        description: daily[6].weather[0].description,
+        temperature: averageTemperature(
+          daily[6].temp.max,
+          daily[6].temp.min
+        ),
+        minTemperature: daily[6].temp.min,
+        maxTemperature: daily[6].temp.max,
+        humidity: daily[6].humidity,
+        pressure: daily[6].pressure,
+        sunrise: daily[6].sunrise,
+        sunset: daily[6].sunset,
+        wind_speed: daily[6].wind_speed,
+        wind_direction: daily[6].wind_deg,
+        details: { // Detailed data
+          clouds_intensity: daily[6].clouds,
+          visibility: '',
+          dew_point: '',
+          feels_like: calculateFeelsLike(daily, 6),
+          uvi: daily[6].uvi,
+          moonPhase: daily[6].moon_phase
+        }
+      },
+      7: {
+        icon: daily[7].weather[0].icon,
+        description: daily[7].weather[0].description,
+        temperature: averageTemperature(
+          daily[7].temp.max,
+          daily[7].temp.min
+        ),
+        minTemperature: daily[7].temp.min,
+        maxTemperature: daily[7].temp.max,
+        humidity: daily[7].humidity,
+        pressure: daily[7].pressure,
+        sunrise: daily[7].sunrise,
+        sunset: daily[7].sunset,
+        wind_speed: daily[7].wind_speed,
+        wind_direction: daily[7].wind_deg,
+        details: { // Detailed data
+          clouds_intensity: daily[7].clouds,
+          visibility: '',
+          dew_point: '',
+          feels_like: calculateFeelsLike(daily, 7),
+          uvi: daily[7].uvi,
+          moonPhase: daily[7].moon_phase
+        }
       }
     },
     hourly
@@ -239,4 +226,3 @@ const calculateFeelsLike = (daily, index) => {
   })
   return count / day.length
 }
-
