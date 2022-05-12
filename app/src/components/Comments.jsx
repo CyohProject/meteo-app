@@ -14,12 +14,6 @@ export default function Comments () {
   const [comments, setComments] = useState([])
   const currentTime = moment().unix()
 
-  const typeComment = (e) => {
-    e.preventDefault()
-
-    setSingleComments(e.target.value)
-  }
-
   const sendComment = (e) => {
     e.preventDefault()
     if (singleComment === '') {
@@ -58,7 +52,7 @@ export default function Comments () {
           name='comment'
           placeholder='Escribe tu comentario'
           id='commentInput'
-          onChange={typeComment}
+          onChange={({ target }) => setSingleComments(target.value)}
         />
         <Link to='#' onClick={sendComment} id='sendButton'>
           <IoIosSend size={30} color='aqua' />
