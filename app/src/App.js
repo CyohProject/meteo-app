@@ -9,6 +9,7 @@ import MainPage from './components/MainPage'
 import Location from './components/Location'
 import Maps from './components/Maps'
 import Alerts from './components/Alerts'
+import Comments from './components/Comments'
 import AboutUs from './components/AboutUs'
 import LocGoogleMaps from './components/LocGoogleMaps'
 import NoLoc from './components/NoLoc'
@@ -48,6 +49,7 @@ const App = () => {
         <Route path='/locationt' element={<LocGoogleMaps />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
+        <Route path='/comments' element={<Comments />} />
         <Route path='/aboutus' element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
