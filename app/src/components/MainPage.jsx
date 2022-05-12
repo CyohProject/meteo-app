@@ -1,9 +1,9 @@
 import MeteoArea from './MeteoSection/MeteoArea'
 
-export default function MainPage ({ loc, currMeteo }) {
+export default function MainPage (props) {
   return (
     <>
-      <MeteoArea loc={loc} currMeteo={currMeteo} />
+      <MeteoArea APIweatherData={props.APIweatherData} />
     </>
   )
 }
