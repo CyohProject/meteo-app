@@ -3,6 +3,7 @@ import Alerts from './Alerts'
 import { useState } from 'react'
 import TabPanel from './TabPanel'
 import { FiAlertTriangle } from 'react-icons/fi'
+import '../styles/MainPage.css'
 const { Box, Grid, Tabs, Tab } = require('@mui/material')
 
 /** TODO
@@ -28,7 +29,7 @@ export default function MainPage (props) {
         <Grid item xs={6}>
           <Box position='relative' sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={tab} onChange={handleChange}>
-              <Tab label={<FiAlertTriangle />} />
+              <Tab label={<text> <FiAlertTriangle color='red' /> Alerts </text>} />
             </Tabs>
           </Box>
           <TabPanel value={tab} index={0}>
