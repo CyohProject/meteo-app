@@ -2,6 +2,9 @@ import weatherData from './weatherData'
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
 
+/** TODO
+ * Mejorar inidicaciones de valores (para entender mejor qué es cada valor)
+ */
 export default function WeatherTable (props) {
   const meteoAreaData = weatherData(props.APIweatherData) // Get data and mount into structure
   const { location, current } = meteoAreaData

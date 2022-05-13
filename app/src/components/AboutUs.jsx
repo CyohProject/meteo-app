@@ -1,7 +1,7 @@
 import '../styles/AboutUs.css'
 import githubIcon from '../assets/githubLogo.png'
 
-/**
+/** TODO
  * Añadir links de APIs y/o las cosas más
  * importantes que hayamos usado en el footer
  * Style

@@ -2,6 +2,9 @@ import MeteoArea from './MeteoSection/MeteoArea'
 import Comments from './Comments'
 const { Box, Grid } = require('@mui/material')
 
+/** TODO
+ * Navbar con Alerts y Comments/Alerts y Comments separados por cajas
+ */
 export default function MainPage (props) {
   return (
     <>

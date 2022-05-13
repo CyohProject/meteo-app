@@ -4,9 +4,11 @@ import moment from 'moment'
 import '../styles/Comments.css'
 import { IoIosSend } from 'react-icons/io'
 
-/**
+/** TODO
+ * Enlazar cada comentario con la localidad del usuario que lo escribió (Cataluña, por ejemplo)
  * Usuario logeado o sin logear
  * Guardar los comentarios
+ * Mostrar solamente los comentarios del estado de la localidad establecida
  */
 
 export default function Comments () {
