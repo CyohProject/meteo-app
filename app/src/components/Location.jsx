@@ -56,12 +56,12 @@ export default function Location () {
           options={cities.sort((a, b) => -b.country.localeCompare(a.country))}
           groupBy={(city) => city.country}
           getOptionLabel={city => city.name}
-          sx={{ width: 300, backgroundColor: 'white' }}
+          sx={{ width: 300, backgroundColor: 'white', borderRadius: 3 + 'px' }}
           renderInput={(params) => <TextField {...params} label='Localización' />}
           onChange={(event, city) => handleLoc(event, city)}
         />
         <Link to='#' onClick={_onClick}>
-          <FaMapMarkerAlt />
+          <FaMapMarkerAlt size={30 + 'px'} />
         </Link>
       </div>
     </IconContext.Provider>

@@ -1,17 +1,13 @@
 /* Manual */
 #location {
   display: flex;
+  align-items: center;
 }
 
-#location-manual {
-  border-radius: 3px;
-}
-
-button {
-  background: none;
-  border: none;
+#location>a {
   margin-left: 3px;
 }
+
 /* MAP */
 .marker {
   display: none;
