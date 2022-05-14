@@ -29,7 +29,7 @@ export default function MainPage (props) {
         <Grid item xs={6}>
           <Box position='relative' sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={tab} onChange={handleChange}>
-              <Tab label={<text> <FiAlertTriangle color='red' /> Alerts </text>} />
+              <Tab label={<span id='AlertsTab'><FiAlertTriangle color='red' /> Alerts </span>} />
             </Tabs>
           </Box>
           <TabPanel value={tab} index={0}>
