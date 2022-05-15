@@ -19,7 +19,7 @@ export default function Alerts () {
   const showAlertDetail = () => setAlertDetail(!alertDetail)
 
   const noAlerts = () => {
-    return <p id='no-alerts'>Actualmente no hay alertas meteorológicas en tu localización</p>
+    return <p id='no-alerts'>There are no weather alerts right now at your location</p>
   }
 
   const showAlerts = () => {
@@ -37,9 +37,9 @@ export default function Alerts () {
           <p id='alert-info'>{alert.description}</p>
           <br />
           <div id='alert-dates'>
-            <em>Inicio: </em>{moment(alert.start).format('dddd, D [de] MMMM, h:mm:ss a')}
+            <em>Start: </em>{moment(alert.start).format('dddd, D [de] MMMM, h:mm:ss a')}
             <br />
-            <em>Fin: </em>{moment(alert.end).format('dddd, D [de] MMMM, h:mm:ss a')}
+            <em>End: </em>{moment(alert.end).format('dddd, D [de] MMMM, h:mm:ss a')}
           </div>
         </li>
       )
@@ -50,7 +50,7 @@ export default function Alerts () {
     <>
       <h1 className='alerts-title'>
         <FiAlertTriangle color='red' className='alerts-title' />
-        Alertas
+        Alerts
       </h1>
       <ul>
         {!alerts ? noAlerts() : showAlerts()}

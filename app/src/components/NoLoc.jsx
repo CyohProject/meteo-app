@@ -1,10 +1,10 @@
 export default function NoLoc () {
   return (
     <>
-      <h1>No se ha obtenido su ubicación</h1>
+      <h1>Could not get your location</h1>
       <section>
-        <p>¿Ha activado los permisos que corresponden?</p>
-        <p>Como alternativa puede establecer su ubicación manualmente</p>
+        <p>Have you allow geolocation permissions?</p>
+        <p>Alternatively, you can set a location manually</p>
       </section>
     </>
   )
