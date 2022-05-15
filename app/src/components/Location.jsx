@@ -8,11 +8,17 @@ import { IconContext } from 'react-icons/lib'
 import { data } from '../cities.json'
 import { Autocomplete, createFilterOptions, TextField } from '@mui/material'
 
-/**
- * TODO
- * Persistir datos establecidos manualmente sin sesión (?)
- * Si hay un usuario, guardar el nombre de la localización en su lista
- * Style
+/** TODO
+ * @todo Persistir datos establecidos manualmente sin sesión (?)
+ * @todo Si hay un usuario, guardar el nombre de la localización en su lista
+ * @todo Style
+ *
+ * @constant handleLoc Send city, and its country info, when it's selected from the list
+ * @constant _onClick Reload the current page with the current information setted
+ * @constant filterOptions Max cities to show at the same time in the Autocomplete
+ * @export Location Component that is used to set a location
+ * (current or not)
+ * @return {*} WEB DOM
  */
 export default function Location () {
   const dispatch = useDispatch()
@@ -42,13 +48,13 @@ export default function Location () {
     })
   })
 
-  // Max cities to show at the same time
   const filterOptions = createFilterOptions({
     matchFrom: 'any',
     limit: 10
   })
 
   return (
+  /* A React component that allows you to change the color of the icons. */
     <IconContext.Provider value={{ color: 'white' }}>
       <div id='location'>
         <Autocomplete
@@ -57,7 +63,7 @@ export default function Location () {
           groupBy={(city) => city.country}
           getOptionLabel={city => city.name}
           sx={{ width: 300, backgroundColor: 'white', borderRadius: 3 + 'px' }}
-          renderInput={(params) => <TextField {...params} label='Localización' />}
+          renderInput={(params) => <TextField {...params} label='Location' />}
           onChange={(event, city) => handleLoc(event, city)}
         />
         <Link to='#' onClick={_onClick}>
