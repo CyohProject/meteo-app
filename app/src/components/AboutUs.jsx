@@ -11,7 +11,7 @@ export default function AboutUs () {
   return (
     <>
       <div id='containerAboutUs'>
-        <h1>Sobre Nosotros</h1><br />
+        <h1>Sobre Nosotros</h1>
         <p>Este es un proyecto de fin de estudios de Grado Superior en el IES Badia.</p>
       </div>
       <footer>

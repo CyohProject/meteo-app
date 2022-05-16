@@ -50,7 +50,7 @@ export default function Alerts () {
     <>
       <h1 className='alerts-title'>
         <FiAlertTriangle color='red' className='alerts-title' />
-        Alerts
+        <span>Alerts</span>
       </h1>
       <ul>
         {!alerts ? noAlerts() : showAlerts()}
