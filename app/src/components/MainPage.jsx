@@ -12,10 +12,10 @@ const { Box, Grid, Tabs, Tab } = require('@mui/material')
  *
  */
 export default function MainPage (props) {
-  const [tab, setTab] = useState(0)
+  const [feedTab, setFeedTab] = useState(0)
 
-  const handleChange = (e, newTab) => {
-    setTab(newTab)
+  const handleFeedTabs = (e, newTab) => {
+    setFeedTab(newTab)
   }
 
   return (
@@ -30,15 +30,15 @@ export default function MainPage (props) {
         </Grid>
         <Grid item xs={6}>
           <Box position='relative' sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={tab} onChange={handleChange}>
+            <Tabs value={feedTab} onChange={handleFeedTabs}>
               <Tab label={<span id='AlertsTab'><FiAlertTriangle color='red' /> Alerts </span>} />
               <Tab label={<span id='CommentsTab'><GoComment color='blue' /> Comments </span>} />
             </Tabs>
           </Box>
-          <TabPanel value={tab} index={0}>
+          <TabPanel value={feedTab} index={0}>
             <Alerts />
           </TabPanel>
-          <TabPanel value={tab} index={1}>
+          <TabPanel value={feedTab} index={1}>
             <Comments />
           </TabPanel>
         </Grid>
