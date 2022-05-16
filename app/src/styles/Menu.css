@@ -12,25 +12,11 @@
   margin-left: 2rem;
 }
 
-.nav-menu {
-  background-color: #060b26;
-  width: 210px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  /* not showing */
-  right: -100%;
-  /* not showing vel */
-  transition: 850ms;
-}
-
-.nav-menu.active {
-  /* showing */
-  right: 0;
-  /* showing vel */
-  transition: 350ms;
+/* Rewrite MaterialUI SwipeableDrawer child
+ * component class for right showing
+*/
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+  background-color: #060b26 !important;
 }
 
 .nav-menu-items {

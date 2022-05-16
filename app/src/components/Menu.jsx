@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { MenuData } from './MenuData'
 import '../styles/Menu.css'
 import { IconContext } from 'react-icons/lib'
+import { SwipeableDrawer } from '@mui/material'
 
 /**
  * TODO:
@@ -38,7 +39,12 @@ export default function Menu () {
       <Link to='#' id='menu-open'>
         <FaIcons.FaBars onClick={showMenu} />
       </Link>
-      <nav className={menu ? 'nav-menu active' : 'nav-menu'}>
+      <SwipeableDrawer
+        anchor='right'
+        open={menu}
+        onOpen={showMenu}
+        onClose={showMenu}
+      >
         <ul className='nav-menu-items' onClick={showMenu}>
           <li className='navbar-toggle'>
             <Link to='#' id='menu-close'>
@@ -47,7 +53,7 @@ export default function Menu () {
           </li>
           {showMenuData()}
         </ul>
-      </nav>
+      </SwipeableDrawer>
     </IconContext.Provider>
   )
 }
