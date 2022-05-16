@@ -5,3 +5,19 @@
 #alertDetailActive {
   display: block;
 }
+
+.alerts-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#no-alerts {
+  border-style: solid;
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-top: revert;
+  padding: 7px;
+}
