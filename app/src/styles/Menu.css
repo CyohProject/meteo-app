@@ -16,7 +16,7 @@
  * component class for right showing
 */
 .css-1160xiw-MuiPaper-root-MuiDrawer-paper {
-  background-color: #060b26 !important;
+  background-image: linear-gradient(to bottom, rgb(87, 118, 255) , rgb(7, 3, 30));
 }
 
 .nav-menu-items {
