@@ -4,6 +4,7 @@ import moment from 'moment'
 import '../styles/Comments.css'
 import { IoIosSend } from 'react-icons/io'
 import { GoComment } from 'react-icons/go'
+const { Grid } = require('@mui/material')
 
 /** TODO
  * Enlazar cada comentario con la localidad del usuario que
@@ -25,7 +26,7 @@ export default function Comments () {
     if (singleComment === '') {
       console.warn('Not a valid value')
     } else {
-      const postDate = moment().unix()
+      const postDate = moment().unix() // moment calendar
       console.log(postDate)
       const timeFrom = calcTime(postDate)
       console.log(timeFrom)
@@ -40,33 +41,39 @@ export default function Comments () {
   }
 
   const CommentList = (props) => {
-    const commentList = props.data.map((comment, i) => <li class='liComments' key={i}>{comment}</li>)
+    const commentList = props.data.map((comment, i) => <li className='liComments' key={i}>{comment}</li>)
 
-    return <ul>{commentList}</ul>
+    if (commentList.length < 1) {
+      return <p id='no-comments'>There are no comments at your location</p>
+    } else {
+      return <ul className='ulComments'>{commentList}</ul>
+    }
   }
 
   return (
     <>
-      <h1>
-        <GoComment id='commentIcon' />
-        Comentarios
-      </h1>
-      <div id='commentContainer'>
-        <CommentList data={comments} />
-      </div>
-      <form onSubmit={sendComment} id='commentForm'>
-        <input
-          type='text'
-          value={singleComment}
-          name='comment'
-          placeholder='Escribe tu comentario'
-          id='commentInput'
-          onChange={({ target }) => setSingleComments(target.value)}
-        />
-        <Link to='#' onClick={sendComment} id='sendButton'>
-          <IoIosSend size={30} color='aqua' />
-        </Link>
-      </form>
+      <Grid container direction='column'>
+        <h1>
+          <GoComment id='commentIcon' />
+          Comentarios
+        </h1>
+        <Grid item id='commentContainer'>
+          <CommentList data={comments} />
+        </Grid>
+        <form onSubmit={sendComment} id='commentForm'>
+          <input
+            type='text'
+            value={singleComment}
+            name='comment'
+            placeholder='Escribe tu comentario'
+            id='commentInput'
+            onChange={({ target }) => setSingleComments(target.value)}
+          />
+          <Link to='#' onClick={sendComment} id='sendButton'>
+            <IoIosSend size={30} color='aqua' />
+          </Link>
+        </form>
+      </Grid>
     </>
   )
 }

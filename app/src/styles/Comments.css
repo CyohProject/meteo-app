@@ -4,10 +4,11 @@
     align-items: center;
     padding-left: 10%;
     bottom: 0;
+    margin-top: 45px;
 }
 
 #commentContainer {
-    height: 72vh;
+    height: 66vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -35,7 +36,17 @@
     margin-top: 2px;
 }
 
+.ulComments {
+    transform: rotate(180deg);
+}
+
 .liComments {
     list-style-type: none;
     padding: 3em;
+    transform: rotate(-180deg);
+}
+
+#no-comments {
+    margin-top: 4px;
+    margin-left: 5px;
 }
