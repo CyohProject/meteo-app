@@ -7,7 +7,9 @@
 }
 
 #commentContainer {
-    height: 75vh;
+    height: 72vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #sendButton {
