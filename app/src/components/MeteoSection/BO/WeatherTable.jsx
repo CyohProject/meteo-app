@@ -1,4 +1,3 @@
-import weatherData from './weatherData'
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
 
@@ -6,7 +5,7 @@ const { Divider, Box, Grid } = require('@mui/material')
  * Mejorar inidicaciones de valores (para entender mejor qué es cada valor)
  */
 export default function WeatherTable (props) {
-  const meteoAreaData = weatherData(props.APIweatherData) // Get data and mount into structure
+  const meteoAreaData = props.meteoAreaData
   const { location, current } = meteoAreaData
 
   moment.locale('en') // Stablish english for APIweatherData through moment.js
