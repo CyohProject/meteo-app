@@ -1,12 +1,10 @@
 import {
-  WiDirectionUp,
-  WiDirectionUpRight,
-  WiDirectionRight,
-  WiDirectionDownRight,
-  WiDirectionDown,
-  WiDirectionDownLeft,
-  WiDirectionLeft,
-  WiDirectionUpLeft,
+  // Wind direction
+  WiDirectionUp, WiDirectionUpRight,
+  WiDirectionRight, WiDirectionDownRight,
+  WiDirectionDown, WiDirectionDownLeft,
+  WiDirectionLeft, WiDirectionUpLeft,
+  // Weather properties icons
   WiHumidity, WiStrongWind, WiSunrise, WiSunset, WiThermometer
 } from 'react-icons/wi'
 
@@ -96,10 +94,14 @@ const weatherAndTemperature = (current) => {
 }
 
 const currentBasicWeather = (current) => {
+  let height = 2
+  const pt = ((height / 4).toString() + 'em')
+  height = height.toString() + 'em'
   const style = {
-    height: '2em',
-    display: 'center',
+    height,
+    display: 'flex',
     margin: 'auto',
+    pt,
     fontSize: '0.8em'
   }
   return (
@@ -123,7 +125,6 @@ const currentBasicWeather = (current) => {
         <Divider />
         <Box sx={style}> <WiSunrise /> {current.sunrise} </Box>
         <Divider />
-
         <Box sx={style}> <WiSunset /> {current.sunset} </Box>
         <Divider />
       </Grid>
