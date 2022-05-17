@@ -32,3 +32,16 @@
   background-color: white;
   border-radius: 6;
 }
+
+/* NoLoc */
+#no-loc {
+  padding: 50px;
+}
+
+#no-loc>h1 {
+  text-align: center;
+}
+
+#no-loc>section {
+  text-align: center;
+}
