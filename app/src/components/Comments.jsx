@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import '../styles/Comments.css'
@@ -64,7 +64,7 @@ export default function Comments () {
       <Grid container direction='column'>
         <h1>
           <GoComment id='commentIcon' />
-          Comentarios
+          Comments
         </h1>
         <Grid item id='commentContainer'>
           <MapComments data={comments} />
@@ -74,7 +74,7 @@ export default function Comments () {
             type='text'
             value={singleComment}
             name='comment'
-            placeholder='Escribe tu comentario'
+            placeholder='Type your comment'
             id='commentInput'
             onChange={({ target }) => setSingleComments(target.value)}
           />
