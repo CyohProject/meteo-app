@@ -2,7 +2,7 @@ const moment = require('moment')
 
 export default function weatherData (data) {
   const location = data.loc
-  const currMeteo = data.currMeteo
+  const { currMeteo } = data
 
   const { current, daily, hourly } = currMeteo
   const currentDay = currMeteo.daily[0]
@@ -25,8 +25,8 @@ export default function weatherData (data) {
       maxTemperature: Math.round(currentDay.temp.max),
       humidity: current.humidity,
       pressure: current.pressure,
-      sunrise: moment(current.sunrise).format('HH:mm'),
-      sunset: moment(current.sunset).format('HH:mm'),
+      sunrise: showSunOnOff(current.sunrise),
+      sunset: showSunOnOff(current.sunset),
       wind_speed: Math.round(current.wind_speed),
       wind_direction: current.wind_deg,
       details: { // Detailed data
@@ -49,8 +49,8 @@ export default function weatherData (data) {
         maxTemperature: daily[1].temp.max,
         humidity: daily[1].humidity,
         pressure: daily[1].pressure,
-        sunrise: daily[1].sunrise,
-        sunset: daily[1].sunset,
+        sunrise: showSunOnOff(daily[1].sunrise),
+        sunset: showSunOnOff(daily[1].sunset),
         wind_speed: daily[1].wind_speed,
         wind_direction: daily[1].wind_deg,
         details: { // Detailed data
@@ -74,8 +74,8 @@ export default function weatherData (data) {
         maxTemperature: daily[2].temp.max,
         humidity: daily[2].humidity,
         pressure: daily[2].pressure,
-        sunrise: daily[2].sunrise,
-        sunset: daily[2].sunset,
+        sunrise: showSunOnOff(daily[2].sunrise),
+        sunset: showSunOnOff(daily[2].sunset),
         wind_speed: daily[2].wind_speed,
         wind_direction: daily[2].wind_deg,
         details: { // Detailed data
@@ -98,8 +98,8 @@ export default function weatherData (data) {
         maxTemperature: daily[3].temp.max,
         humidity: daily[3].humidity,
         pressure: daily[3].pressure,
-        sunrise: daily[3].sunrise,
-        sunset: daily[3].sunset,
+        sunrise: showSunOnOff(daily[3].sunrise),
+        sunset: showSunOnOff(daily[3].sunset),
         wind_speed: daily[3].wind_speed,
         wind_direction: daily[3].wind_deg,
         details: { // Detailed data
@@ -123,8 +123,8 @@ export default function weatherData (data) {
         maxTemperature: daily[4].temp.max,
         humidity: daily[4].humidity,
         pressure: daily[4].pressure,
-        sunrise: daily[4].sunrise,
-        sunset: daily[4].sunset,
+        sunrise: showSunOnOff(daily[4].sunrise),
+        sunset: showSunOnOff(daily[4].sunset),
         wind_speed: daily[4].wind_speed,
         wind_direction: daily[4].wind_deg,
         details: { // Detailed data
@@ -147,8 +147,8 @@ export default function weatherData (data) {
         maxTemperature: daily[5].temp.max,
         humidity: daily[5].humidity,
         pressure: daily[5].pressure,
-        sunrise: daily[5].sunrise,
-        sunset: daily[5].sunset,
+        sunrise: showSunOnOff(daily[5].sunrise),
+        sunset: showSunOnOff(daily[5].sunset),
         wind_speed: daily[5].wind_speed,
         wind_direction: daily[5].wind_deg,
         details: { // Detailed data
@@ -171,8 +171,8 @@ export default function weatherData (data) {
         maxTemperature: daily[6].temp.max,
         humidity: daily[6].humidity,
         pressure: daily[6].pressure,
-        sunrise: daily[6].sunrise,
-        sunset: daily[6].sunset,
+        sunrise: showSunOnOff(daily[6].sunrise),
+        sunset: showSunOnOff(daily[6].sunset),
         wind_speed: daily[6].wind_speed,
         wind_direction: daily[6].wind_deg,
         details: { // Detailed data
@@ -195,8 +195,8 @@ export default function weatherData (data) {
         maxTemperature: daily[7].temp.max,
         humidity: daily[7].humidity,
         pressure: daily[7].pressure,
-        sunrise: daily[7].sunrise,
-        sunset: daily[7].sunset,
+        sunrise: showSunOnOff(daily[7].sunrise),
+        sunset: showSunOnOff(daily[7].sunset),
         wind_speed: daily[7].wind_speed,
         wind_direction: daily[7].wind_deg,
         details: { // Detailed data
@@ -225,4 +225,8 @@ const calculateFeelsLike = (daily, index) => {
     return value
   })
   return count / day.length
+}
+
+const showSunOnOff = (data) => {
+  return moment(data * 1000).format('HH:mm')
 }
