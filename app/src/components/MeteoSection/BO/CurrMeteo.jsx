@@ -139,5 +139,5 @@ const showWindDirection = (direction) => {
   if (direction > 67.5) return <WiDirectionRight size={size} />
   if (direction > 22.5) return <WiDirectionUpRight size={size} />
 
-  return '?'
+  return <WiDirectionUpRight size={size} />
 }
