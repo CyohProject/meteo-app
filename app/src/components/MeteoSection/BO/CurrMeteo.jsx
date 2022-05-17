@@ -5,8 +5,11 @@ import {
   WiDirectionDown, WiDirectionDownLeft,
   WiDirectionLeft, WiDirectionUpLeft,
   // Weather properties icons
-  WiHumidity, WiStrongWind, WiSunrise, WiSunset, WiThermometer
+  WiHumidity, WiStrongWind, WiThermometer
 } from 'react-icons/wi'
+import {
+  BsSunrise, BsSunsetFill
+} from 'react-icons/bs'
 
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
@@ -123,9 +126,9 @@ const currentBasicWeather = (current) => {
           <WiStrongWind /> {current.wind_speed} km/h {showWindDirection(current.wind_direction)}
         </Box>
         <Divider />
-        <Box sx={style}> <WiSunrise /> {current.sunrise} </Box>
+        <Box sx={style}> <BsSunrise /> {'  '} {current.sunrise} </Box>
         <Divider />
-        <Box sx={style}> <WiSunset /> {current.sunset} </Box>
+        <Box sx={style}> <BsSunsetFill /> {'  '} {current.sunset} </Box>
         <Divider />
       </Grid>
     </Grid>
