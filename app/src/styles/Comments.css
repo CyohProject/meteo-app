@@ -4,11 +4,11 @@
     align-items: center;
     padding-left: 10%;
     bottom: 0;
-    margin-top: 45px;
+    margin-top: 44px;
 }
 
 #commentContainer {
-    height: 66vh;
+    height: 64vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -49,4 +49,9 @@
 #no-comments {
     margin-top: 4px;
     margin-left: 5px;
+}
+
+.liTime {
+    font-size: 12px;
+    color: #C8C1BA;
 }

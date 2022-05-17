@@ -19,34 +19,43 @@ const { Grid } = require('@mui/material')
 export default function Comments () {
   const [singleComment, setSingleComments] = useState('')
   const [comments, setComments] = useState([])
-  const currentTime = moment().unix()
+  const currentTime = moment().format()
 
   const sendComment = (e) => {
     e.preventDefault()
     if (singleComment === '') {
       console.warn('Not a valid value')
     } else {
-      const postDate = moment().unix() // moment calendar
-      console.log(postDate)
-      const timeFrom = calcTime(postDate)
-      console.log(timeFrom)
       setComments([...comments, singleComment])
       setSingleComments('')
     }
   }
 
   const calcTime = (postDate) => {
-    const time = moment(currentTime).from(postDate)
+    const time = moment(postDate).from(currentTime)
     return time
   }
 
-  const CommentList = (props) => {
-    const commentList = props.data.map((comment, i) => <li className='liComments' key={i}>{comment}</li>)
+  const MapComments = (props) => {
+    const postDate = moment('20220516', 'YYYYMMDD') // fecha de ejemplo
+    const timeFrom = calcTime(postDate)
+    const commentsList = props.data.map((comment, i) => {
+      return (
+        <li key={i}>
+          <ul className='liComments'>
+            <li className='liTime'>{timeFrom}</li>
+            <li>{comment}</li>
+          </ul>
+        </li>
+      )
+    })
 
-    if (commentList.length < 1) {
+    if (commentsList.length < 1) {
       return <p id='no-comments'>There are no comments at your location</p>
     } else {
-      return <ul className='ulComments'>{commentList}</ul>
+      return (
+        <ul className='ulComments'>{commentsList}</ul>
+      )
     }
   }
 
@@ -58,7 +67,7 @@ export default function Comments () {
           Comentarios
         </h1>
         <Grid item id='commentContainer'>
-          <CommentList data={comments} />
+          <MapComments data={comments} />
         </Grid>
         <form onSubmit={sendComment} id='commentForm'>
           <input
