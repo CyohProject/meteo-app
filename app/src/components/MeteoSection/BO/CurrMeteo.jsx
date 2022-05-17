@@ -1,10 +1,22 @@
+import {
+  WiDirectionUp,
+  WiDirectionUpRight,
+  WiDirectionRight,
+  WiDirectionDownRight,
+  WiDirectionDown,
+  WiDirectionDownLeft,
+  WiDirectionLeft,
+  WiDirectionUpLeft,
+  WiHumidity, WiStrongWind, WiSunrise, WiSunset, WiThermometer
+} from 'react-icons/wi'
+
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
 
 /** TODO
  * Mejorar inidicaciones de valores (para entender mejor qué es cada valor)
  */
-export default function WeatherTable (props) {
+export default function CurrMeteo (props) {
   const meteoAreaData = props.meteoAreaData
   const { location, current } = meteoAreaData
 
@@ -84,69 +96,51 @@ const weatherAndTemperature = (current) => {
 }
 
 const currentBasicWeather = (current) => {
+  const style = {
+    height: '2em',
+    display: 'center',
+    margin: 'auto',
+    fontSize: '0.8em'
+  }
   return (
     <Grid container>
       <Grid item xs={6}>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.maxTemperature} ºC+ / {current.minTemperature} ºC-
+        <Box sx={style}>
+          <WiThermometer color='red' /> {current.maxTemperature} ºC / <WiThermometer color='blue' />{current.minTemperature} ºC
         </Box>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.humidity} %
-        </Box>
+        <Box sx={style}> <WiHumidity /> {current.humidity} % </Box>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.pressure} mb
-        </Box>
+        <Box sx={style}> Pressure {current.pressure} mb </Box>
         <Divider />
       </Grid>
       <Grid item xs={6}>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.wind_direction} / {current.wind_speed} km/h
-          {/* {windDirIcon(current.wind_direction)} / {current.wind_speed} km/h */}
+        <Box sx={style}>
+          <WiStrongWind /> {current.wind_speed} km/h {showWindDirection(current.wind_direction)}
         </Box>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.sunrise} /
-        </Box>
+        <Box sx={style}> <WiSunrise /> {current.sunrise} </Box>
         <Divider />
-        <Box sx={{
-          height: '1.7em',
-          display: 'center',
-          fontSize: '0.9em'
-        }}
-        >
-          {current.sunset} \
-        </Box>
+
+        <Box sx={style}> <WiSunset /> {current.sunset} </Box>
         <Divider />
       </Grid>
     </Grid>
   )
+}
+
+const showWindDirection = (direction) => {
+  const size = '2em'
+  if (direction > 337.5) return <WiDirectionUp size={size} />
+  if (direction > 292.5) return <WiDirectionUpLeft size={size} />
+  if (direction > 247.5) return <WiDirectionLeft size={size} />
+  if (direction > 202.5) return <WiDirectionDownLeft size={size} />
+  if (direction > 157.5) return <WiDirectionDown size={size} />
+  if (direction > 122.5) return <WiDirectionDownRight size={size} />
+  if (direction > 67.5) return <WiDirectionRight size={size} />
+  if (direction > 22.5) return <WiDirectionUpRight size={size} />
+
+  return '?'
 }

@@ -1,4 +1,4 @@
-import WeatherTable from './BO/WeatherTable'
+import CurrMeteo from './BO/CurrMeteo'
 import Details from './BO/Details'
 import weatherData from './BO/weatherData'
 
@@ -18,7 +18,7 @@ export default function MeteoArea (props) {
   const meteoAreaData = weatherData(props.APIweatherData) // Parse rcv api object into personal local object
   return (
     <>
-      <WeatherTable meteoAreaData={meteoAreaData} />
+      <CurrMeteo meteoAreaData={meteoAreaData} />
       <MeteoTabbar meteoAreaData={meteoAreaData} />
     </>
   )
