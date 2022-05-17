@@ -97,38 +97,30 @@ const weatherAndTemperature = (current) => {
 }
 
 const currentBasicWeather = (current) => {
-  let height = 2
-  const pt = ((height / 4).toString() + 'em')
-  height = height.toString() + 'em'
-  const style = {
-    height,
-    display: 'flex',
-    margin: 'auto',
-    pt,
-    fontSize: '0.8em'
-  }
   return (
     <Grid container>
       <Grid item xs={6}>
         <Divider />
-        <Box sx={style}>
-          <WiThermometer color='red' /> {current.maxTemperature} ºC / <WiThermometer color='blue' />{current.minTemperature} ºC
+        <Box sx={boxStyle}>
+          <WiThermometer color='red' /> {current.maxTemperature} ºC
         </Box>
         <Divider />
-        <Box sx={style}> <WiHumidity /> {current.humidity} % </Box>
+        <Box sx={boxStyle}> <WiHumidity /> {current.humidity} % </Box>
         <Divider />
-        <Box sx={style}> Pressure {current.pressure} mb </Box>
+        <Box sx={boxStyle}> <BsSunrise /> {'  '} {current.sunrise} </Box>
         <Divider />
       </Grid>
       <Grid item xs={6}>
         <Divider />
-        <Box sx={style}>
+        <Box sx={boxStyle}>
+          <WiThermometer color='blue' />{current.minTemperature} ºC
+        </Box>
+        <Divider />
+        <Box sx={boxStyle}>
           <WiStrongWind /> {current.wind_speed} km/h {showWindDirection(current.wind_direction)}
         </Box>
         <Divider />
-        <Box sx={style}> <BsSunrise /> {'  '} {current.sunrise} </Box>
-        <Divider />
-        <Box sx={style}> <BsSunsetFill /> {'  '} {current.sunset} </Box>
+        <Box sx={boxStyle}> <BsSunsetFill /> {'  '} {current.sunset} </Box>
         <Divider />
       </Grid>
     </Grid>
@@ -147,4 +139,16 @@ const showWindDirection = (direction) => {
   if (direction > 22.5) return <WiDirectionUpRight size={size} />
 
   return '?'
+}
+
+// Define style of weather rows
+let height = 2
+const pt = ((height / 4).toString() + 'em')
+height = height.toString() + 'em'
+export const boxStyle = {
+  height,
+  display: 'flex',
+  margin: 'auto',
+  pt,
+  fontSize: '0.8em'
 }

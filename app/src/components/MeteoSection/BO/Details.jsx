@@ -5,6 +5,8 @@ import {
   WiMoonAltFull, WiMoonAltWaningGibbous3,
   WiMoonThirdQuarter, WiMoonAltWaningCrescent3
 } from 'react-icons/wi'
+import { BsFillCloudyFill } from 'react-icons/bs'
+import { boxStyle } from './CurrMeteo' // Reuse same style of CurrMeteo box
 const { Divider, Box, Grid } = require('@mui/material')
 
 export default function Details (props) {
@@ -24,14 +26,8 @@ function showDetailsData (details) {
   return Object.keys(details).map((item, index) => {
     return (
       <div key={index}>
-        <Box
-          sx={{
-            height: '1.7em',
-            display: 'center',
-            fontSize: '0.9em'
-          }}
-        >
-          {item} : {details[item]} {showUnits(item, details)}
+        <Box sx={boxStyle}>
+          {showDetailItem(item, details)}
         </Box>
         <Divider />
       </div>
@@ -40,19 +36,20 @@ function showDetailsData (details) {
 }
 
 // const showDetail = (item, details) => {
-const showUnits = (item, details) => {
+const showDetailItem = (item, details) => {
   switch (item) {
     case 'clouds_intensity':
-      return ' '
-      // return (item ':' details[item]} {showUnits(item, details[item])})
-    case 'dew_point':
-      return ' ºC'
+      return (<span id={item}> <BsFillCloudyFill /> {details[item]} </span>)
     case 'feels_like':
-      return ' ºC'
+      return <span id={item}> <b>Feels Like</b>&nbsp; {details[item]} ºC </span>
+    case 'pressure':
+      return <span id={item}> <b>Pressure</b>&nbsp; {details[item]} mb </span>
     case 'uvi':
-      return ' to 10'
+      return <span id={item}> <b>UVI</b>&nbsp; {details[item]} to 10 </span>
+    case 'dew_point':
+      return <span id={item}> <b>Dew Point</b>&nbsp; {details[item]} ºC </span>
     case 'moonPhase':
-      return (showMoonPhase(details[item]))
+      return <span id={item}> <b>MoonPhase</b>&nbsp; {showMoonPhase(details[item])} </span>
     default:
       break
   }
@@ -61,27 +58,27 @@ const showUnits = (item, details) => {
 
 const showMoonPhase = (moonphase) => {
   if (moonphase === 0) { // New moon
-    return (<span id='moonphaseInfo'> <WiMoonAltNew /> New moon </span>)
+    return <WiMoonAltNew />
   }
   if (moonphase > 0 && moonphase < 0.25) { // Waxing crescent
-    return (<span id='moonphaseInfo'> <WiMoonAltWaxingCrescent3 /> Waxing crescent </span>)
+    return <WiMoonAltWaxingCrescent3 />
   }
   if (moonphase === 0.25) { // First quarter
-    return (<span id='moonphaseInfo'> <WiMoonFirstQuarter /> 1st quarter </span>)
+    return <WiMoonFirstQuarter />
   }
   if (moonphase > 0.25 && moonphase < 0.5) { // Waxing gibbous
-    return (<span id='moonphaseInfo'> <WiMoonAltWaxingGibbous3 /> Waxing gibbous </span>)
+    return <WiMoonAltWaxingGibbous3 />
   }
   if (moonphase === 0.5) { // Full moon
-    return (<span id='moonphaseInfo'> <WiMoonAltFull /> Full moon </span>)
+    return <WiMoonAltFull />
   }
   if (moonphase > 0.5 && moonphase < 0.75) { // Waning gibbous
-    return (<span id='moonphaseInfo'> <WiMoonAltWaningGibbous3 /> Waning gibbous </span>)
+    return <WiMoonAltWaningGibbous3 />
   }
   if (moonphase === 0.75) { // Last quarter
-    return (<span id='moonphaseInfo'> <WiMoonThirdQuarter /> Last quarter </span>)
+    return <WiMoonThirdQuarter />
   }
   if (moonphase > 0.75 && moonphase <= 1) { // Waning crescent
-    return (<span id='moonphaseInfo'> <WiMoonAltWaningCrescent3 /> Waning crescent </span>)
+    return <WiMoonAltWaningCrescent3 />
   }
 }
