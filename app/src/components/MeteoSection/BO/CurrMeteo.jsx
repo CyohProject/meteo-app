@@ -10,6 +10,7 @@ import {
 import {
   BsSunrise, BsSunsetFill
 } from 'react-icons/bs'
+import { boxStyle } from '../../../styles/Box'
 
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
@@ -139,16 +140,4 @@ const showWindDirection = (direction) => {
   if (direction > 22.5) return <WiDirectionUpRight size={size} />
 
   return '?'
-}
-
-// Define style of weather rows
-let height = 2
-const pt = ((height / 4).toString() + 'em')
-height = height.toString() + 'em'
-export const boxStyle = {
-  height,
-  display: 'flex',
-  margin: 'auto',
-  pt,
-  fontSize: '0.8em'
 }

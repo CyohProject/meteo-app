@@ -6,7 +6,7 @@ import {
   WiMoonThirdQuarter, WiMoonAltWaningCrescent3
 } from 'react-icons/wi'
 import { BsFillCloudyFill } from 'react-icons/bs'
-import { boxStyle } from './CurrMeteo' // Reuse same style of CurrMeteo box
+import { boxStyle } from '../../../styles/Box'
 const { Divider, Box, Grid } = require('@mui/material')
 
 export default function Details (props) {
