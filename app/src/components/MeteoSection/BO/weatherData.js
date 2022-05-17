@@ -24,16 +24,16 @@ export default function weatherData (data) {
       minTemperature: Math.round(currentDay.temp.min),
       maxTemperature: Math.round(currentDay.temp.max),
       humidity: current.humidity,
-      pressure: current.pressure,
       sunrise: showSunOnOff(current.sunrise),
       sunset: showSunOnOff(current.sunset),
       wind_speed: Math.round(current.wind_speed),
       wind_direction: current.wind_deg,
       details: { // Detailed data
         clouds_intensity: current.clouds,
-        dew_point: current.dew_point,
         feels_like: current.feels_like,
+        pressure: current.pressure,
         uvi: current.uvi,
+        dew_point: current.dew_point,
         moonPhase: currentDay.moon_phase
       }
     },
