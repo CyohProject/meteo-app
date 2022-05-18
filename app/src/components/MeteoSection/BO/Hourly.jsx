@@ -19,11 +19,14 @@ export default function Hourly (props) {
     <>
       <Grid
         container
-        // sx={{
-        //   my: '0.4em',
-        //   height: '100vh',
-        //   overflow: 'scroll'
-        // }}
+        sx={{
+          my: '0.4em',
+          height: '48vh',
+          // overflow: 'scroll'
+          overflow: 'auto'
+          // overflow-x: hidden,
+          // overflow-y: auto
+        }}
       >
         {/* <Box style={{ maxHeight: '30em', overflow: 'auto' }}></Box> */}
         {showHourly(hourly)}
@@ -33,9 +36,9 @@ export default function Hourly (props) {
 }
 
 const showHourly = (hourly) => {
-  console.log(hourly)
+  // console.log(hourly)
   return hourly.map((hour, index) => {
-    console.log(hour)
+    // console.log(hour)
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>

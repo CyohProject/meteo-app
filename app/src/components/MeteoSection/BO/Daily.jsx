@@ -33,9 +33,9 @@ export default function Daily (props) {
 }
 
 const showDaily = (daily) => {
-  console.log(daily)
+  // console.log(daily)
   return daily.map((day, index) => {
-    console.log(day)
+    // console.log(day)
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
