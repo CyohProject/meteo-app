@@ -1,6 +1,6 @@
 import MeteoArea from './MeteoSection/MeteoArea'
 import Alerts from './Alerts'
-import Comments from './Comments'
+import CommentsMain from './CommentsMain'
 import { useState } from 'react'
 import TabPanel from './TabPanel'
 import { FiAlertTriangle } from 'react-icons/fi'
@@ -39,7 +39,7 @@ export default function MainPage (props) {
             <Alerts />
           </TabPanel>
           <TabPanel value={feedTab} index={1}>
-            <Comments />
+            <CommentsMain />
           </TabPanel>
         </Grid>
       </Grid>
