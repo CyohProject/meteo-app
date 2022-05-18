@@ -209,7 +209,7 @@ export default function weatherData (data) {
         }
       }
     },
-    hourly
+    hourly: buildHourly(hourly)
   }
 }
 
@@ -229,4 +229,27 @@ const calculateFeelsLike = (daily, index) => {
 
 const showSunOnOff = (data) => {
   return moment(data * 1000).format('HH:mm')
+}
+
+const buildHourly = (hourly) => {
+  return hourly.map(hour => {
+    return {
+      icon: hour.weather[0].icon,
+      description: hour.weather[0].description,
+      temperature: hour.temp,
+      // Basic data
+      rainProbability: hour.pop,
+      humidity: hour.humidity,
+      wind_speed: Math.round(hour.wind_speed),
+      wind_direction: hour.wind_deg,
+      // Detailed data
+      details: {
+        clouds_intensity: hour.clouds,
+        feels_like: hour.feels_like,
+        pressure: hour.pressure,
+        uvi: hour.uvi,
+        dew_point: hour.dew_point
+      }
+    }
+  })
 }
