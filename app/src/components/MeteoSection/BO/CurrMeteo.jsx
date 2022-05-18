@@ -1,15 +1,11 @@
 import {
-  // Wind direction
-  WiDirectionUp, WiDirectionUpRight,
-  WiDirectionRight, WiDirectionDownRight,
-  WiDirectionDown, WiDirectionDownLeft,
-  WiDirectionLeft, WiDirectionUpLeft,
   // Weather properties icons
-  WiHumidity, WiStrongWind, WiThermometer
+  WiStrongWind, WiThermometer
 } from 'react-icons/wi'
 import {
   BsSunrise, BsSunsetFill, BsCloudRain
 } from 'react-icons/bs'
+import { showWindDirection } from './tools'
 import { boxStyle, t } from '../../../styles/Box'
 
 const moment = require('moment')
@@ -126,18 +122,4 @@ const currentBasicWeather = (current) => {
       </Grid>
     </Grid>
   )
-}
-
-const showWindDirection = (direction) => {
-  const size = '2em'
-  if (direction > 337.5) return <WiDirectionUp size={size} />
-  if (direction > 292.5) return <WiDirectionUpLeft size={size} />
-  if (direction > 247.5) return <WiDirectionLeft size={size} />
-  if (direction > 202.5) return <WiDirectionDownLeft size={size} />
-  if (direction > 157.5) return <WiDirectionDown size={size} />
-  if (direction > 122.5) return <WiDirectionDownRight size={size} />
-  if (direction > 67.5) return <WiDirectionRight size={size} />
-  if (direction > 22.5) return <WiDirectionUpRight size={size} />
-
-  return <WiDirectionUpRight size={size} />
 }
