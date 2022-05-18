@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import '../styles/Comments.css'
 import { IoIosSend } from 'react-icons/io'
-import { GoComment } from 'react-icons/go'
+import { FaRegComments } from 'react-icons/fa'
 const { Grid } = require('@mui/material')
 
 /** TODO
@@ -62,12 +62,14 @@ export default function Comments () {
   return (
     <>
       <Grid container direction='column'>
-        <h1>
-          <GoComment id='commentIcon' />
-          Comments
-        </h1>
-        <Grid item id='commentContainer'>
-          <MapComments data={comments} />
+        <Grid container id='topContainer'>
+          <h1 className='comments-title'>
+            <FaRegComments id='commentIcon' />
+            Comments
+          </h1>
+          <Grid item id='commentContainer'>
+            <MapComments data={comments} />
+          </Grid>
         </Grid>
         <form onSubmit={sendComment} id='commentForm'>
           <input

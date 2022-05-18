@@ -1,16 +1,21 @@
 #commentForm {
-    width: 100%;
+    width: 90%; 
     display: flex;
     align-items: center;
     padding-left: 10%;
-    bottom: 0;
-    margin-top: 44px;
+    bottom: 45px;
+    position: absolute;
 }
 
+
 #commentContainer {
-    height: 64vh;
+    max-height: 64vh;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+#topContainer {
+    display: grid;
 }
 
 #sendButton {
@@ -18,7 +23,7 @@
 }
 
 #commentInput {
-    width: 80%;
+    width: 100%;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -34,6 +39,7 @@
 
 #commentIcon {
     margin-top: 2px;
+    padding-right: 5px;
 }
 
 .ulComments {
@@ -46,9 +52,20 @@
     transform: rotate(-180deg);
 }
 
+.comments-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
 #no-comments {
-    margin-top: 4px;
-    margin-left: 5px;
+    margin: auto;
+    margin-top: revert;
+    border-style: solid;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 7px;
 }
 
 .liTime {
