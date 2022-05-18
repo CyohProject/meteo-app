@@ -12,8 +12,6 @@ const { Grid } = require('@mui/material')
  * Usuario logeado o sin logear
  * Guardar los comentarios
  * Mostrar solamente los comentarios del estado de la localidad establecida
- * Hacer que la todo el contendor sea más responsive (en MainPage no encaja
- * bien y crea scroll por lo grande que es)
  */
 
 export default function Comments () {
