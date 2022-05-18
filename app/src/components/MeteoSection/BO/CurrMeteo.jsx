@@ -8,9 +8,9 @@ import {
   WiHumidity, WiStrongWind, WiThermometer
 } from 'react-icons/wi'
 import {
-  BsSunrise, BsSunsetFill
+  BsSunrise, BsSunsetFill, BsCloudRain
 } from 'react-icons/bs'
-import { boxStyle } from '../../../styles/Box'
+import { boxStyle, t } from '../../../styles/Box'
 
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')
@@ -106,9 +106,9 @@ const currentBasicWeather = (current) => {
           <WiThermometer color='red' /> {current.maxTemperature} ºC
         </Box>
         <Divider />
-        <Box sx={boxStyle}> <WiHumidity /> {current.humidity} % </Box>
+        <Box sx={boxStyle}> ?<BsCloudRain /> {t()} {current.rainProbability} % </Box>
         <Divider />
-        <Box sx={boxStyle}> <BsSunrise /> {'  '} {current.sunrise} </Box>
+        <Box sx={boxStyle}> <BsSunrise /> {t()} {current.sunrise} </Box>
         <Divider />
       </Grid>
       <Grid item xs={6}>
@@ -118,10 +118,10 @@ const currentBasicWeather = (current) => {
         </Box>
         <Divider />
         <Box sx={boxStyle}>
-          <WiStrongWind /> {current.wind_speed} km/h {showWindDirection(current.wind_direction)}
+          {current.wind_speed} km/h <WiStrongWind />{showWindDirection(current.wind_direction)}
         </Box>
         <Divider />
-        <Box sx={boxStyle}> <BsSunsetFill /> {'  '} {current.sunset} </Box>
+        <Box sx={boxStyle}> <BsSunsetFill /> {t()} {current.sunset} </Box>
         <Divider />
       </Grid>
     </Grid>

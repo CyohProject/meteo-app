@@ -23,12 +23,13 @@ export default function weatherData (data) {
       // Basic data
       minTemperature: Math.round(currentDay.temp.min),
       maxTemperature: Math.round(currentDay.temp.max),
-      humidity: current.humidity,
+      rainProbability: currentDay.pop,
       sunrise: showSunOnOff(current.sunrise),
       sunset: showSunOnOff(current.sunset),
       wind_speed: Math.round(current.wind_speed),
       wind_direction: current.wind_deg,
       details: { // Detailed data
+        humidity: current.humidity,
         clouds_intensity: current.clouds,
         feels_like: current.feels_like,
         pressure: current.pressure,
@@ -229,6 +230,35 @@ const calculateFeelsLike = (daily, index) => {
 
 const showSunOnOff = (data) => {
   return moment(data * 1000).format('HH:mm')
+}
+
+const buildDaily = (daily) => {
+  return {
+    icon: daily[7].weather[0].icon,
+    description: daily[7].weather[0].description,
+    temperature: averageTemperature(
+      daily[7].temp.max,
+      daily[7].temp.min
+    ),
+    // Basic data
+    minTemperature: daily[7].temp.min,
+    maxTemperature: daily[7].temp.max,
+    rainProbability: daily[7].pop,
+    humidity: daily[7].humidity,
+    pressure: daily[7].pressure,
+    sunrise: showSunOnOff(daily[7].sunrise),
+    sunset: showSunOnOff(daily[7].sunset),
+    wind_speed: daily[7].wind_speed,
+    wind_direction: daily[7].wind_deg,
+    details: { // Detailed data
+      clouds_intensity: daily[7].clouds,
+      visibility: '',
+      dew_point: '',
+      feels_like: calculateFeelsLike(daily, 7),
+      uvi: daily[7].uvi,
+      moonPhase: daily[7].moon_phase
+    }
+  }
 }
 
 const buildHourly = (hourly) => {

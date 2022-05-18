@@ -9,3 +9,7 @@ export const boxStyle = {
   pt,
   fontSize: '0.8em'
 }
+
+export const t = () => {
+  return <>&nbsp;&nbsp;&nbsp;&nbsp;</>
+}

@@ -4,9 +4,11 @@ import {
   WiMoonFirstQuarter, WiMoonAltWaxingGibbous3,
   WiMoonAltFull, WiMoonAltWaningGibbous3,
   WiMoonThirdQuarter, WiMoonAltWaningCrescent3
+  , WiHumidity
 } from 'react-icons/wi'
 import { BsFillCloudyFill } from 'react-icons/bs'
-import { boxStyle } from '../../../styles/Box'
+import { boxStyle, t } from '../../../styles/Box'
+
 const { Divider, Box, Grid } = require('@mui/material')
 
 export default function Details (props) {
@@ -41,15 +43,17 @@ const showDetailItem = (item, details) => {
     case 'clouds_intensity':
       return (<span id={item}> <BsFillCloudyFill /> {details[item]} </span>)
     case 'feels_like':
-      return <span id={item}> <b>Feels Like</b>&nbsp; {details[item]} ºC </span>
+      return <span id={item}> <b>Feels Like</b>{t()} {details[item]} ºC </span>
     case 'pressure':
-      return <span id={item}> <b>Pressure</b>&nbsp; {details[item]} mb </span>
+      return <span id={item}> <b>Pressure</b>{t()} {details[item]} mb </span>
     case 'uvi':
-      return <span id={item}> <b>UVI</b>&nbsp; {details[item]} to 10 </span>
+      return <span id={item}> <b>UVI</b>{t()} {details[item]} to 10 </span>
     case 'dew_point':
-      return <span id={item}> <b>Dew Point</b>&nbsp; {details[item]} ºC </span>
+      return <span id={item}> <b>Dew Point</b>{t()} {details[item]} ºC </span>
     case 'moonPhase':
-      return <span id={item}> <b>MoonPhase</b>&nbsp; {showMoonPhase(details[item])} </span>
+      return <span id={item}> <b>MoonPhase</b>{t()} {showMoonPhase(details[item])} </span>
+    case 'humidity':
+      return <span id={item}> <WiHumidity /> {details[item]} % </span>
     default:
       break
   }
