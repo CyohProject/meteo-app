@@ -125,6 +125,7 @@ const buildDaily = (daily) => {
  * @returns custom hourly data
  */
 const buildHourly = (hourly) => {
+  hourly = reduceTo24hourly(hourly)
   return hourly.map(hour => {
     return {
       icon: hour.weather[0].icon,
@@ -145,4 +146,13 @@ const buildHourly = (hourly) => {
       }
     }
   })
+}
+
+/**
+ * From given an hourly array, with index 0 to 47, split into first 24h
+ * @param {*} array hourly
+ * @returns first 24 hours
+ */
+const reduceTo24hourly = (array) => {
+  return array.filter(function (item, index) { return index % 2 })
 }
