@@ -7,7 +7,7 @@ import { Box } from '@mui/material'
 export default function TabPanel ({ children, value, index }) {
   return (
     <Box
-      sx={{ p: 3 }}
+      sx={{ p: 3, height: 95 + '%' }}
       role='tabpanel'
       hidden={value !== index}
     >
