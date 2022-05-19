@@ -1,5 +1,5 @@
 import Alerts from './Alerts'
-import CommentsMain from './CommentsMain'
+import CommentsFeedBack from './CommentsFeedBack'
 import TabPanel from './TabPanel'
 
 import { useState } from 'react'
@@ -8,8 +8,8 @@ import { GoComment } from 'react-icons/go'
 const { Box, Tabs, Tab } = require('@mui/material')
 
 /**
- * Represents an area to get comunication system-user and user-user.
- * It have 2 sections: alerts and comments
+ * Represents an area to get communication system-user and user-user.
+ * It has 2 sections: alerts and comments
  * @returns
  */
 export default function FeedBack () {
@@ -32,7 +32,7 @@ export default function FeedBack () {
         <Alerts />
       </TabPanel>
       <TabPanel value={feedTab} index={1}>
-        <CommentsMain />
+        <CommentsFeedBack />
       </TabPanel>
     </>
   )
