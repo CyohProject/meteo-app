@@ -8,16 +8,22 @@ import { GoComment } from 'react-icons/go'
 import '../styles/MainPage.css'
 const { Box, Grid, Tabs, Tab } = require('@mui/material')
 
-/** TODO
- *
+/**
+ * Represents the 1st view for users. Contains 2 differents sections split in screen:
+ * MeteoArea and FeedBackArea (Weather alerts & comments)
+ * @param {*} props receive 'coords' , 'loc' and 'currMeteo'
+ * 'coords' represents coordinates from user device
+ * 'loc' represents location data as name, country...
+ * 'currMeteo' represents weather data from the stablish location
+ * @returns a grid container structure with split screen. In left side have MeteoArea
+ * and in the right FeedBack section
  */
 export default function MainPage (props) {
   const [feedTab, setFeedTab] = useState(0)
-
   const handleFeedTabs = (e, newTab) => {
     setFeedTab(newTab)
   }
-
+  // The structure its made with Grid and Box from Material UI
   return (
     <>
       <Grid container>

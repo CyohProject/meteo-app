@@ -1,5 +1,10 @@
 const moment = require('moment')
 
+/**
+ * Parse all data receive from API into custom data object
+ * @param {} data data from API
+ * @returns custom weather object
+ */
 export default function weatherData (data) {
   const location = data.loc
   const { currMeteo } = data
@@ -43,10 +48,23 @@ export default function weatherData (data) {
   }
 }
 
+/**
+ * Calculate average temperature from max and min data
+ * @param {*} min minimal temperature
+ * @param {*} max maximum temperature
+ * @returns average temperature
+ */
 const averageTemperature = (min, max) => {
   return (max + min) / 2
 }
 
+/**
+ * Calculate average feels like for this day from many moments
+ * on the day (morning, evening...)
+ * @param {*} daily all days data
+ * @param {*} index
+ * @returns average feelss like
+ */
 const calculateFeelsLike = (daily, index) => {
   const day = daily[index]
   let count = 0
@@ -56,10 +74,20 @@ const calculateFeelsLike = (daily, index) => {
   return count / day.length
 }
 
+/**
+ * Calculate Sunrise or sunset date with hour:minute format
+ * @param {*} data A date in miliseconds (sunrise or sunset)
+ * @returns hour:minutes (date)
+ */
 const showSunOnOff = (data) => {
   return moment(data * 1000).format('HH:mm')
 }
 
+/**
+ * Parse received daily data object from API
+ * @param {*} daily
+ * @returns custom daily data
+ */
 const buildDaily = (daily) => {
   return daily.map(day => {
     return {
@@ -79,18 +107,23 @@ const buildDaily = (daily) => {
       sunset: showSunOnOff(day.sunset),
       wind_speed: day.wind_speed,
       wind_direction: day.wind_deg,
+      moonPhase: day.moon_phase,
       details: { // Detailed data
         clouds_intensity: day.clouds,
         // visibility: '',
         // dew_point: '',
         feels_like: calculateFeelsLike(daily, 7),
-        uvi: day.uvi,
-        moonPhase: day.moon_phase
+        uvi: day.uvi
       }
     }
   })
 }
 
+/**
+ * Parse received hourly data object from API
+ * @param {*} hourly
+ * @returns custom hourly data
+ */
 const buildHourly = (hourly) => {
   return hourly.map(hour => {
     return {

@@ -7,8 +7,11 @@ import { BsCloudRain } from 'react-icons/bs'
 import { showWindDirection } from './tools'
 const moment = require('moment')
 const { Box, Grid } = require('@mui/material')
-/** TODO
- * Mejorar inidicaciones de valores (para entender mejor qué es cada valor)
+
+/**
+ * Represents daily info from weather data
+ * @param {*} props receive daily object from weatherData
+ * @returns Grid with daily info
  */
 export default function Daily (props) {
   const { daily } = props
@@ -17,25 +20,20 @@ export default function Daily (props) {
 
   return (
     <>
-      <Grid
-        container
-        // sx={{
-        //   my: '0.4em',
-        //   height: '100vh',
-        //   overflow: 'scroll'
-        // }}
-      >
-        {/* <Box style={{ maxHeight: '30em', overflow: 'auto' }}></Box> */}
+      <Grid container>
         {showDaily(daily)}
       </Grid>
     </>
   )
 }
 
+/**
+ * Receive daily object and map it
+ * @param {*} daily weather object
+ * @returns Grid structure with future daily data
+ */
 const showDaily = (daily) => {
-  // console.log(daily)
   return daily.map((day, index) => {
-    // console.log(day)
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
@@ -54,7 +52,7 @@ const showDaily = (daily) => {
         </Grid>
         <Grid item xs={2}>
 
-          <Box> ?<BsCloudRain /> {day.rainProbability} %</Box>
+          <Box> <BsCloudRain /> {day.rainProbability} %</Box>
         </Grid>
         <Grid item xs={2}>
           <Box> <WiHumidity /> {day.humidity} % </Box>
@@ -62,9 +60,6 @@ const showDaily = (daily) => {
         <Grid item xs={2}>
           <Box> {day.wind_speed} km/h <WiStrongWind />{showWindDirection(day.wind_direction)} </Box>
         </Grid>
-        {/* <Grid item xs={2}>
-          <Box> {day.details} </Box>
-        </Grid> */}
       </Grid>
     )
   })

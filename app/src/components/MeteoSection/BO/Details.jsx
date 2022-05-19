@@ -1,16 +1,16 @@
-import {
-  // Moonphase
-  WiMoonAltNew, WiMoonAltWaxingCrescent3,
-  WiMoonFirstQuarter, WiMoonAltWaxingGibbous3,
-  WiMoonAltFull, WiMoonAltWaningGibbous3,
-  WiMoonThirdQuarter, WiMoonAltWaningCrescent3
-  , WiHumidity
-} from 'react-icons/wi'
+import { showMoonPhase } from './tools'
+
+import { WiHumidity } from 'react-icons/wi'
 import { BsFillCloudyFill } from 'react-icons/bs'
 import { boxStyle, t } from '../../../styles/Box'
 
 const { Divider, Box, Grid } = require('@mui/material')
 
+/**
+ * Represents detailed info from current weather data
+ * @param {*} props receive details object from weatherData.current
+ * @returns Grid with details info
+ */
 export default function Details (props) {
   const { details } = props
   return (
@@ -23,8 +23,12 @@ export default function Details (props) {
   )
 }
 
-// Detailed elements
-function showDetailsData (details) {
+/**
+ * Receive details object and build a detailed weather for tab view
+ * @param {*} details details object from weatherData.current
+ * @returns detailed weather view
+ */
+const showDetailsData = (details) => {
   return Object.keys(details).map((item, index) => {
     return (
       <div key={index}>
@@ -37,7 +41,12 @@ function showDetailsData (details) {
   })
 }
 
-// const showDetail = (item, details) => {
+/**
+ * Receive an index and details object and build a detailed weather row
+ * @param {*} item name of row
+ * @param {*} details details object from weatherData.current
+ * @returns detailed info row
+ */
 const showDetailItem = (item, details) => {
   switch (item) {
     case 'clouds_intensity':
@@ -58,31 +67,4 @@ const showDetailItem = (item, details) => {
       break
   }
   return ''
-}
-
-const showMoonPhase = (moonphase) => {
-  if (moonphase === 0) { // New moon
-    return <WiMoonAltNew />
-  }
-  if (moonphase > 0 && moonphase < 0.25) { // Waxing crescent
-    return <WiMoonAltWaxingCrescent3 />
-  }
-  if (moonphase === 0.25) { // First quarter
-    return <WiMoonFirstQuarter />
-  }
-  if (moonphase > 0.25 && moonphase < 0.5) { // Waxing gibbous
-    return <WiMoonAltWaxingGibbous3 />
-  }
-  if (moonphase === 0.5) { // Full moon
-    return <WiMoonAltFull />
-  }
-  if (moonphase > 0.5 && moonphase < 0.75) { // Waning gibbous
-    return <WiMoonAltWaningGibbous3 />
-  }
-  if (moonphase === 0.75) { // Last quarter
-    return <WiMoonThirdQuarter />
-  }
-  if (moonphase > 0.75 && moonphase <= 1) { // Waning crescent
-    return <WiMoonAltWaningCrescent3 />
-  }
 }

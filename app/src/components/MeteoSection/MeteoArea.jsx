@@ -3,22 +3,26 @@ import weatherData from './BO/weatherData'
 import CurrMeteo from './BO/CurrMeteo'
 import Details from './BO/Details'
 import Hourly from './BO/Hourly'
-
-import { useState } from 'react'
-
+import Daily from './BO/Daily'
 import TabPanel from '../TabPanel'
 
+import { useState } from 'react'
 import { BiDetail } from 'react-icons/bi'
 import { BsCalendar3WeekFill } from 'react-icons/bs'
 import { Ri24HoursLine } from 'react-icons/ri'
-import Daily from './BO/Daily'
 const { Box, Tabs, Tab } = require('@mui/material')
 
-/** TODO
- * Navbar con detalles, previsión horaria, previsión semanal
+/**
+ * Represents area that displays all weather info in the location given inside props
+ * @param {*} props receive 'coords' , 'loc' and 'currMeteo'
+ * 'coords' represents coordinates from user device
+ * 'loc' represents location data as name, country...
+ * 'currMeteo' represents weather data from the stablish location
+ * @returns Current Meteo and MeteoTabbar (that contains detailed, hourly and daily data)
  */
 export default function MeteoArea (props) {
-  const meteoAreaData = weatherData(props.APIweatherData) // Parse rcv api object into personal local object
+  // Parse received { coords, loc, currMeteo} into personal local object
+  const meteoAreaData = weatherData(props.APIweatherData)
 
   return (
     <>
@@ -28,6 +32,12 @@ export default function MeteoArea (props) {
   )
 }
 
+/**
+ * Represents tabbar object from Meteo. It contains Details, Hourly and Daily sections
+ * to show extended weather data
+ * @param {*} props receive all location weather data to parse into Tabbar childs
+ * @returns
+ */
 const MeteoTabbar = (props) => {
   const { details } = props.meteoAreaData.current
   const { daily, hourly } = props.meteoAreaData
@@ -40,6 +50,7 @@ const MeteoTabbar = (props) => {
 
   const [meteoTab, setMeteoTab] = useState(meteoTabIndex.details)
 
+  // Receive event of tab change and stablish the new one throught the state
   const handleMeteoTabs = (e, nextTab) => {
     setMeteoTab(nextTab)
   }
