@@ -6,7 +6,7 @@ export const locationReducer = (state = [], action) => {
     return { ...state, currCoords: action.payload }
   }
 
-  // Obtain current weather data
+  // Obtain actual info
   if (action.type === '@location/locInfoAll') {
     return {
       ...state,
@@ -16,6 +16,7 @@ export const locationReducer = (state = [], action) => {
     }
   }
 
+  // Obtain current actual info manually
   if (action.type === '@location/locInfoAllM') {
     return {
       ...state,
@@ -27,6 +28,9 @@ export const locationReducer = (state = [], action) => {
   return state
 }
 
+/**
+ * Auto obtaining - current coords
+ */
 const currCoords = () => {
   return async (dispatch) => {
     const coords = await getCurrCoords()
@@ -39,7 +43,7 @@ const currCoords = () => {
 }
 
 /**
- * Auto actual info obtaining
+ * Auto obtaining - actual info
  */
 const obtainLocInfoAll = (coords) => {
   return async (dispatch) => {
@@ -52,6 +56,9 @@ const obtainLocInfoAll = (coords) => {
   }
 }
 
+/**
+ * Manual obtaining - actual info
+ */
 const obtainLocInfoManual = city => {
   return async (dispatch) => {
     const locInfoAllM = await getLocInfoManual(city)
