@@ -2,7 +2,7 @@ import MeteoArea from './MeteoSection/MeteoArea'
 import '../styles/MainPage.css'
 import FeedBack from './FeedBack'
 
-const { Box, Grid } = require('@mui/material')
+const { Grid } = require('@mui/material')
 
 /**
  * Represents the 1st view for users. Contains 2 differents sections split in screen:
