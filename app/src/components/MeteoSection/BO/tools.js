@@ -100,7 +100,7 @@ export const currentBasicWeather = (current) => {
           <WiThermometer color='red' /> {current.maxTemperature} ºC
         </Box>
         <Divider />
-        <Box sx={boxStyle}> ?<BsCloudRain /> {t()} {current.rainProbability} % </Box>
+        <Box sx={boxStyle}> <BsCloudRain /> {t()} {current.rainProbability} % </Box>
         <Divider />
         <Box sx={boxStyle}> <BsSunrise /> {t()} {current.sunrise} </Box>
         <Divider />
