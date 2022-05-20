@@ -1,5 +1,5 @@
 {
-  "name": "app-meteo-app",
+  "name": "app",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -30,7 +30,6 @@
     "dev": "nodemon index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "serve:prod": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -54,5 +53,6 @@
   },
   "devDependencies": {
     "nodemon": "2.0.16"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }
