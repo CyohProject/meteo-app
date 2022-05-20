@@ -19,7 +19,7 @@ background-color: azure;
 
 @media (orientation: portrait){
 .boxFuturePrev {
-    max-height: 73vh;
+    max-height: 70vh;
     overflow-y: auto;
     background-color: rgb(255, 246, 232);
 }

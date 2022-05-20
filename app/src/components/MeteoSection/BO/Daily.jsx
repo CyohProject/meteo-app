@@ -1,5 +1,5 @@
 
-import { boxStyle } from '../../../styles/Box'
+import { boxStyle, t1 } from '../../../styles/Box'
 import {
   // Weather properties icons
   WiStrongWind, WiHumidity
@@ -53,7 +53,7 @@ const showDaily = (daily) => {
         </Grid>
         <Grid item xs={2}>
 
-          <Box sx={boxStyle}> <BsCloudRain /> {day.rainProbability} %</Box>
+          <Box sx={boxStyle}> <BsCloudRain /> {t1()} {day.rainProbability} %</Box>
         </Grid>
         <Grid item xs={2}>
           <Box sx={boxStyle}> <WiHumidity /> {day.humidity} % </Box>
