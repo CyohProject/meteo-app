@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3001/api/location'
+const baseUrl = '/api/location'
 
 /**
  * Get current user position from the browser
