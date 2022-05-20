@@ -15,6 +15,9 @@
   },
   "scripts": {
     "lint": "standard .\\app .\\api",
+    "build": "yarn workspace app build",
+    "start": "yarn workspace api start",
+    "dev:api": "yarn workspace app build && yarn workspace api dev",
     "front": "cd app && yarn start",
     "back": "cd api && yarn start"
   },
@@ -22,6 +25,7 @@
     "standard": "17.0.0"
   },
   "eslintConfig": {
+    "ignorePatterns": "build",
     "extends": ".\\node_modules\\standard\\eslintrc.json"
   }
 }
