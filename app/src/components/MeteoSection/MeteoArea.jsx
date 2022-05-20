@@ -25,9 +25,7 @@ export default function MeteoArea (props) {
   const meteoAreaData = weatherData(props.APIweatherData)
 
   return (
-    <Box
-      sx={{ bgcolor: '#E5EDDE' }}
-    >
+    <Box>
       <CurrMeteo meteoAreaData={meteoAreaData} />
       <MeteoTabbar meteoAreaData={meteoAreaData} />
     </Box>
@@ -66,13 +64,13 @@ const MeteoTabbar = (props) => {
           <Tab label={<span id='HourlyTab'><BsCalendar3WeekFill color='brown' /> Daily </span>} />
         </Tabs>
       </Box>
-      <TabPanel value={meteoTab} index={meteoTabIndex.details}>
+      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.details}>
         <Details details={details} />
       </TabPanel>
-      <TabPanel value={meteoTab} index={meteoTabIndex.hourly}>
+      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.hourly}>
         <Hourly hourly={hourly} />
       </TabPanel>
-      <TabPanel value={meteoTab} index={meteoTabIndex.daily}>
+      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.daily}>
         <Daily daily={daily} />
       </TabPanel>
     </>
