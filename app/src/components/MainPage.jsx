@@ -20,11 +20,7 @@ export default function MainPage (props) {
     <>
       <Grid container>
         <Grid item xs={6}>
-          <Box
-            sx={{ bgcolor: '#E5EDDE' }}
-          >
-            <MeteoArea APIweatherData={props.APIweatherData} />
-          </Box>
+          <MeteoArea APIweatherData={props.APIweatherData} />
         </Grid>
         <Grid item xs={6}>
           <FeedBack />

@@ -25,10 +25,12 @@ export default function MeteoArea (props) {
   const meteoAreaData = weatherData(props.APIweatherData)
 
   return (
-    <>
+    <Box
+      sx={{ bgcolor: '#E5EDDE' }}
+    >
       <CurrMeteo meteoAreaData={meteoAreaData} />
       <MeteoTabbar meteoAreaData={meteoAreaData} />
-    </>
+    </Box>
   )
 }
 
