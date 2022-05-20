@@ -27,8 +27,8 @@ export default function Alerts () {
         <li key={index} className='alert'>
           <div id='alert-head'>
             <h3><strong>{alert.event}</strong></h3>
-            <BsInfoCircle onMouseEnter={showAlertDetail} onMouseLeave={showAlertDetail} />
-            <div id={alertDetail ? 'alertDetailActive' : 'alertDetail'}>
+            <BsInfoCircle className={alertDetail ? 'alertDetailActive' : 'alertDetail'} onMouseEnter={showAlertDetail} onMouseLeave={showAlertDetail} />
+            <div className={alertDetail ? 'alertDetailActive' : 'alertDetail'}>
               {alert.tags[0]}
             </div>
           </div>

@@ -1,8 +1,8 @@
-#alertDetail {
+.alertDetail {
   display: none;
 }
 
-#alertDetailActive {
+.alertDetailActive {
   display: block;
 }
 
