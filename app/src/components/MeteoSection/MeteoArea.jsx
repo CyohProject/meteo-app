@@ -63,17 +63,19 @@ const MeteoTabbar = (props) => {
           <Tab label={<span id='HourlyTab'><BsCalendar3WeekFill color='brown' /> Daily </span>} />
         </Tabs>
       </Box>
-      <TabPanel value={meteoTab} index={meteoTabIndex.details}>
+      <TabPanel className='boxFuturePrev' value={meteoTab} index={meteoTabIndex.details}>
         <Details details={details} />
       </TabPanel>
-      <Box id='boxHourly'>
+      <Box className='boxFuturePrev'>
         <TabPanel value={meteoTab} index={meteoTabIndex.hourly}>
           <Hourly hourly={hourly} />
         </TabPanel>
       </Box>
-      <TabPanel value={meteoTab} index={meteoTabIndex.daily}>
-        <Daily daily={daily} />
-      </TabPanel>
+      <Box className='boxFuturePrev'>
+        <TabPanel value={meteoTab} index={meteoTabIndex.daily}>
+          <Daily daily={daily} />
+        </TabPanel>
+      </Box>
     </>
   )
 }

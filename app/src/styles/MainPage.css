@@ -1,3 +1,15 @@
 span#AlertsTab {
   text-transform: capitalize;
 }
+
+.boxFuturePrev {
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+@media (orientation: portrait){
+  .boxFuturePrev {
+    max-height: 73vh;
+    overflow-y: auto;
+  }
+}

@@ -15,8 +15,3 @@ code {
 #root {
   max-height: 100vh;
 }
-
-#boxHourly {
-  max-height: 60vh;
-  overflow-y: auto;
-}
