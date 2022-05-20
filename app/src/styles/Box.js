@@ -13,3 +13,6 @@ export const boxStyle = {
 export const t = () => {
   return <>&nbsp;&nbsp;&nbsp;&nbsp;</>
 }
+export const t1 = () => {
+  return <>&nbsp;</>
+}

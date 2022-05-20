@@ -1,4 +1,5 @@
 
+import { boxStyle } from '../../../styles/Box'
 import {
   // Weather properties icons
   WiStrongWind, WiHumidity
@@ -37,10 +38,10 @@ const showDaily = (daily) => {
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
-          <Box> {index} </Box>
+          <Box sx={boxStyle}> {index} </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box>
+          <Box sx={boxStyle}>
             <img
               src={'http://openweathermap.org/img/wn/' +
               day.icon + '.png'} alt='weather-icon'
@@ -48,17 +49,17 @@ const showDaily = (daily) => {
           </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> {Math.round(day.temperature)} ºC </Box>
+          <Box sx={boxStyle}> {Math.round(day.temperature)} ºC </Box>
         </Grid>
         <Grid item xs={2}>
 
-          <Box> <BsCloudRain /> {day.rainProbability} %</Box>
+          <Box sx={boxStyle}> <BsCloudRain /> {day.rainProbability} %</Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> <WiHumidity /> {day.humidity} % </Box>
+          <Box sx={boxStyle}> <WiHumidity /> {day.humidity} % </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> {day.wind_speed} km/h <WiStrongWind />{showWindDirection(day.wind_direction)} </Box>
+          <Box sx={boxStyle}> {day.wind_speed} km/h <WiStrongWind />{showWindDirection(day.wind_direction)} </Box>
         </Grid>
       </Grid>
     )

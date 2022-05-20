@@ -1,10 +1,11 @@
 
+import { showWindDirection } from './tools'
+import { boxStyle, t1 } from '../../../styles/Box'
 import {
   // Weather properties icons
   WiStrongWind, WiHumidity
 } from 'react-icons/wi'
 import { BsCloudRain } from 'react-icons/bs'
-import { showWindDirection } from './tools'
 const moment = require('moment')
 const { Box, Grid } = require('@mui/material')
 
@@ -37,7 +38,7 @@ const showHourly = (hourly) => {
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
-          <Box> {index} </Box>
+          <Box sx={boxStyle}> {index} </Box>
         </Grid>
         <Grid item xs={2}>
           <Box>
@@ -48,17 +49,16 @@ const showHourly = (hourly) => {
           </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> {Math.round(hour.temperature)} ºC </Box>
+          <Box sx={boxStyle}> {Math.round(hour.temperature)} ºC </Box>
         </Grid>
         <Grid item xs={2}>
-
-          <Box> <BsCloudRain /> {hour.rainProbability} %</Box>
+          <Box sx={boxStyle}> <BsCloudRain /> {t1()} {hour.rainProbability} %</Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> <WiHumidity /> {hour.humidity} % </Box>
+          <Box sx={boxStyle}> <WiHumidity /> {hour.humidity} % </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box> {hour.wind_speed} km/h <WiStrongWind />{showWindDirection(hour.wind_direction)} </Box>
+          <Box sx={boxStyle}> {hour.wind_speed} km/h <WiStrongWind />{showWindDirection(hour.wind_direction)} </Box>
         </Grid>
       </Grid>
     )
