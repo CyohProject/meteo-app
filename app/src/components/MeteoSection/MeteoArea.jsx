@@ -1,4 +1,3 @@
-
 import weatherData from './BO/weatherData'
 import CurrMeteo from './BO/CurrMeteo'
 import Details from './BO/Details'
@@ -64,13 +63,15 @@ const MeteoTabbar = (props) => {
           <Tab label={<span id='HourlyTab'><BsCalendar3WeekFill color='brown' /> Daily </span>} />
         </Tabs>
       </Box>
-      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.details}>
+      <TabPanel value={meteoTab} index={meteoTabIndex.details}>
         <Details details={details} />
       </TabPanel>
-      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.hourly}>
-        <Hourly hourly={hourly} />
-      </TabPanel>
-      <TabPanel id='currentTabSections' value={meteoTab} index={meteoTabIndex.daily}>
+      <Box id='boxHourly'>
+        <TabPanel value={meteoTab} index={meteoTabIndex.hourly}>
+          <Hourly hourly={hourly} />
+        </TabPanel>
+      </Box>
+      <TabPanel value={meteoTab} index={meteoTabIndex.daily}>
         <Daily daily={daily} />
       </TabPanel>
     </>
