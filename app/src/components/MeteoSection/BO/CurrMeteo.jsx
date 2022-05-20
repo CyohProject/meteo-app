@@ -20,7 +20,7 @@ export default function CurrMeteo (props) {
 
   return (
     <>
-      <Grid container>
+      <Grid container id='currMeteoContainer'>
         <Grid pl={2} pt={1} item xs={11}>
           {showLocation(location)}
           {showDate()}

@@ -4,6 +4,7 @@ import Details from './BO/Details'
 import Hourly from './BO/Hourly'
 import Daily from './BO/Daily'
 import TabPanel from '../TabPanel'
+import '../../styles/Meteo.css'
 
 import { useState } from 'react'
 import { BiDetail } from 'react-icons/bi'
@@ -56,16 +57,18 @@ const MeteoTabbar = (props) => {
 
   return (
     <>
-      <Box position='relative' sx={{ borderBottom: 1, borderColor: 'divider' }}>
+      <Box className='mainTabHeader' position='relative' sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={meteoTab} onChange={handleMeteoTabs}>
           <Tab label={<span id='DetailsTab'><BiDetail color='black' /> Details </span>} />
-          <Tab label={<span id='DetailsTab'><Ri24HoursLine color='darkgreen' /> Hourly </span>} />
-          <Tab label={<span id='HourlyTab'><BsCalendar3WeekFill color='brown' /> Daily </span>} />
+          <Tab label={<span id='HourlyTab'><Ri24HoursLine color='darkgreen' /> Hourly </span>} />
+          <Tab label={<span id='DailyTab'><BsCalendar3WeekFill color='brown' /> Daily </span>} />
         </Tabs>
       </Box>
-      <TabPanel className='boxFuturePrev' value={meteoTab} index={meteoTabIndex.details}>
-        <Details details={details} />
-      </TabPanel>
+      <Box className='boxFuturePrev'>
+        <TabPanel value={meteoTab} index={meteoTabIndex.details}>
+          <Details details={details} />
+        </TabPanel>
+      </Box>
       <Box className='boxFuturePrev'>
         <TabPanel value={meteoTab} index={meteoTabIndex.hourly}>
           <Hourly hourly={hourly} />

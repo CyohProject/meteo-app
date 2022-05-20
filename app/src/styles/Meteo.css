@@ -1,0 +1,26 @@
+#currMeteoContainer {
+    background-image: linear-gradient(to right, rgb(180, 194, 255) , azure);
+}
+
+#DetailsTab, #HourlyTab, #DailyTab{
+color: rgb(43, 25, 3);
+text-shadow: -0.1em -0.1em 0.4em  rgb(188, 180, 212);
+}
+
+.mainTabHeader {
+background-image: linear-gradient(to bottom, rgb(255, 255, 255) , rgb(192, 182, 219));
+}
+
+.boxFuturePrev {
+max-height: 62vh;
+overflow-y: auto;
+background-color: azure;
+}
+
+@media (orientation: portrait){
+.boxFuturePrev {
+    max-height: 73vh;
+    overflow-y: auto;
+    background-color: rgb(255, 246, 232);
+}
+}
