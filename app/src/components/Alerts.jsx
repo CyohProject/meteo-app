@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux'
 import { FiAlertTriangle } from 'react-icons/fi'
 import { BsInfoCircle } from 'react-icons/bs'
 import moment from 'moment'
-import 'moment/locale/es'
 import { useState } from 'react'
 import '../styles/Alerts.css'
 
@@ -37,9 +36,9 @@ export default function Alerts () {
           <p id='alert-info'>{alert.description}</p>
           <br />
           <div id='alert-dates'>
-            <em>Start: </em>{moment(alert.start).format('dddd, D [de] MMMM, h:mm:ss a')}
+            <em>Start: </em>{moment(alert.start * 1000).format('dddd, D MMMM, h:mm:ss a')}
             <br />
-            <em>End: </em>{moment(alert.end).format('dddd, D [de] MMMM, h:mm:ss a')}
+            <em>End: </em>{moment(alert.end * 1000).format('dddd, D MMMM, h:mm:ss a')}
           </div>
         </li>
       )
