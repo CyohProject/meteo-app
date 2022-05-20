@@ -1,10 +1,11 @@
 import '../styles/AboutUs.css'
 import githubIcon from '../assets/githubLogo.png'
 
-/** TODO
- * Añadir links de APIs y/o las cosas más
- * importantes que hayamos usado en el footer
- * Style
+/**
+ * @todo Añadir links de APIs y/o las cosas más importantes que hayamos usado en el footer
+ * @todo Style
+ *
+ * @return Container with info about ourselves and the project. Footer with important links
  */
 
 export default function AboutUs () {

@@ -4,20 +4,28 @@ import moment from 'moment'
 import '../styles/Comments.css'
 import { IoIosSend } from 'react-icons/io'
 import { FaRegComments } from 'react-icons/fa'
+import { useSelector } from 'react-redux'
 const { Grid } = require('@mui/material')
 
-/** TODO
- * Enlazar cada comentario con la localidad del usuario que
- * lo escribió (Cataluña, por ejemplo)
- * Usuario logeado o sin logear
- * Guardar los comentarios
- * Mostrar solamente los comentarios del estado de la localidad establecida
+/**
+ * @todo Enlazar cada comentario con la localidad del usuario que lo escribió (Cataluña, por ejemplo)
+ * @todo Usuario logeado o sin logear
+ * @todo Guardar los comentarios
+ * @todo Mostrar solamente los comentarios del estado de la localidad establecida
+ *
+ * @constant sendComment Add comment and after that set it back to blank
+ * @constant calcTime Receives the date when the comment was made and compares with the current date
+ * @constant MapComments returns the list with all the comments
+ * @return Container with all the comments and the input to send them
  */
 
 export default function Comments () {
   const [singleComment, setSingleComments] = useState('')
   const [comments, setComments] = useState([])
   const currentTime = moment().format()
+  const loc = useSelector(state => (state.location.loc))
+
+  console.log(loc)
 
   const sendComment = (e) => {
     e.preventDefault()
