@@ -41,7 +41,7 @@ const showDaily = (daily) => {
           <Box sx={boxStyle}> {index} </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box sx={boxStyle}>
+          <Box>
             <img
               src={'http://openweathermap.org/img/wn/' +
               day.icon + '.png'} alt='weather-icon'
