@@ -1,8 +1,8 @@
-import weatherData from './BO/weatherData'
-import CurrMeteo from './BO/CurrMeteo'
-import Details from './BO/Details'
-import Hourly from './BO/Hourly'
-import Daily from './BO/Daily'
+import weatherData from './weatherData'
+import CurrMeteo from './CurrMeteo'
+import Details from './Details'
+import Hourly from './Hourly'
+import Daily from './Daily'
 import TabPanel from '../TabPanel'
 import '../../styles/Meteo.css'
 

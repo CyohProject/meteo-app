@@ -15,7 +15,7 @@ import {
 import {
   BsSunrise, BsSunsetFill, BsCloudRain
 } from 'react-icons/bs'
-import { boxStyle, t } from '../../../styles/Box'
+import { boxStyle, t } from '../../styles/Box'
 
 const moment = require('moment')
 const { Divider, Box, Grid } = require('@mui/material')

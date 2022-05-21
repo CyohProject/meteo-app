@@ -2,7 +2,7 @@ import { showMoonPhase } from './tools'
 
 import { WiHumidity } from 'react-icons/wi'
 import { BsFillCloudyFill } from 'react-icons/bs'
-import { boxStyle, t } from '../../../styles/Box'
+import { boxStyle, t } from '../../styles/Box'
 
 const { Divider, Box, Grid } = require('@mui/material')
 

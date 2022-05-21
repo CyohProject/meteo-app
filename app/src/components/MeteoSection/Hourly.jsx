@@ -1,40 +1,40 @@
 
-import { boxStyle, t1 } from '../../../styles/Box'
+import { showWindDirection } from './tools'
+import { boxStyle, t1 } from '../../styles/Box'
 import {
   // Weather properties icons
   WiStrongWind, WiHumidity
 } from 'react-icons/wi'
 import { BsCloudRain } from 'react-icons/bs'
-import { showWindDirection } from './tools'
 const moment = require('moment')
 const { Box, Grid } = require('@mui/material')
 
 /**
  * Represents daily info from weather data
- * @param {*} props receive daily object from weatherData
+ * @param {*} props receive details object from weatherData
  * @returns Grid with daily info
  */
-export default function Daily (props) {
-  const { daily } = props
+export default function Hourly (props) {
+  const { hourly } = props
 
   moment.locale('en') // Stablish english for APIweatherData through moment.js
 
   return (
     <>
       <Grid container>
-        {showDaily(daily)}
+        {showHourly(hourly)}
       </Grid>
     </>
   )
 }
 
 /**
- * Receive daily object and map it
- * @param {*} daily weather object
- * @returns Grid structure with future daily data
+ * Receive hourly object and map it
+ * @param {*} hourly weather object
+ * @returns Grid structure with future hourly data
  */
-const showDaily = (daily) => {
-  return daily.map((day, index) => {
+const showHourly = (hourly) => {
+  return hourly.map((hour, index) => {
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
@@ -44,22 +44,21 @@ const showDaily = (daily) => {
           <Box>
             <img
               src={'http://openweathermap.org/img/wn/' +
-              day.icon + '.png'} alt='weather-icon'
+              hour.icon + '.png'} alt='weather-icon'
             />
           </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box sx={boxStyle}> {Math.round(day.temperature)} ºC </Box>
+          <Box sx={boxStyle}> {Math.round(hour.temperature)} ºC </Box>
         </Grid>
         <Grid item xs={2}>
-
-          <Box sx={boxStyle}> <BsCloudRain /> {t1()} {day.rainProbability} %</Box>
+          <Box sx={boxStyle}> <BsCloudRain /> {t1()} {hour.rainProbability} %</Box>
         </Grid>
         <Grid item xs={2}>
-          <Box sx={boxStyle}> <WiHumidity /> {day.humidity} % </Box>
+          <Box sx={boxStyle}> <WiHumidity /> {hour.humidity} % </Box>
         </Grid>
         <Grid item xs={2}>
-          <Box sx={boxStyle}> {day.wind_speed} km/h <WiStrongWind />{showWindDirection(day.wind_direction)} </Box>
+          <Box sx={boxStyle}> {hour.wind_speed} km/h <WiStrongWind />{showWindDirection(hour.wind_direction)} </Box>
         </Grid>
       </Grid>
     )
