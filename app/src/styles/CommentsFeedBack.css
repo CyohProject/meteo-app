@@ -60,8 +60,7 @@
 }
 
 #mainno-comments {
-    margin: auto;
-    margin-top: revert;
+    margin: 16px auto 0;
     border-style: solid;
     border-radius: 5px;
     width: fit-content;
