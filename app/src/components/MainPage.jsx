@@ -1,5 +1,4 @@
 import MeteoArea from './MeteoSection/MeteoArea'
-import '../styles/MainPage.css'
 import FeedBack from './FeedBack'
 
 const { Grid } = require('@mui/material')

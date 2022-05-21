@@ -1,4 +1,3 @@
-import '../styles/AboutUs.css'
 import githubIcon from '../assets/githubLogo.png'
 
 /**

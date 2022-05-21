@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
+@import url(./AboutUs.css);
+@import url(./Alerts.css);
+@import url(./Comments.css);
+@import url(./CommentsFeedBack.css);
+@import url(./Location.css);
+@import url(./MainPage.css);
+@import url(./Menu.css);
+@import url(./Meteo.css);
 * {
   box-sizing: border-box;
   margin: 0;

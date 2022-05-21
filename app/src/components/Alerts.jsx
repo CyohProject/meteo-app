@@ -3,7 +3,6 @@ import { FiAlertTriangle } from 'react-icons/fi'
 import { BsInfoCircle } from 'react-icons/bs'
 import moment from 'moment'
 import { useState } from 'react'
-import '../styles/Alerts.css'
 
 /**
  * TODO:

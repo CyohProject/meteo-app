@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
-import '../styles/CommentsFeedBack.css'
 import { IoIosSend } from 'react-icons/io'
 import { FaRegComments } from 'react-icons/fa'
 const { Grid } = require('@mui/material')

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import * as FaIcons from 'react-icons/fa'
 import { useState } from 'react'
 import { MenuData } from './MenuData'
-import '../styles/Menu.css'
 import { IconContext } from 'react-icons/lib'
 import { SwipeableDrawer } from '@mui/material'
 
