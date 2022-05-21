@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
-import '../styles/Comments.css'
 import { IoIosSend } from 'react-icons/io'
 import { FaRegComments } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
@@ -24,8 +23,6 @@ export default function Comments () {
   const [comments, setComments] = useState([])
   const currentTime = moment().format()
   const loc = useSelector(state => (state.location.loc))
-
-  console.log(loc)
 
   const sendComment = (e) => {
     e.preventDefault()
