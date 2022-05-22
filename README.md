@@ -1,4 +1,7 @@
 # App Meteo
+<a	a href='https://youtu.be/Cdv-uTCDAm8' target='_blank'>
+	<img src='./rsc/portada.png' alt='Presentación en video del aplicativo'>
+</a>
 
 ## Introducción
 <p> Este es un proyecto de fin de estudios de Grado Superior, en IES Badia, y la duración estimada sería de 99h, en un plazo del mes de MAyo de 2022. Luego se consideraría concluido. </p>
