@@ -5,6 +5,7 @@ const PORT = process.env.PORT
 
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 const app = express()
 const locationRouter = require('./controllers/location')
 
@@ -17,6 +18,10 @@ app.use('/images', express.static('images'))
 app.use(express.static('../app/build'))
 
 app.use('/api/location', locationRouter)
+
+app.get('/*', (request, response) => {
+  response.sendFile(path.join(__dirname, '../app/build', 'index.html'))
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
