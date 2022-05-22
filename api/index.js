@@ -1,5 +1,6 @@
 // Enables process.env
 require('dotenv').config()
+require('./mongo')
 // DEPLOYMENT PORT or BY DEFAULT
 const PORT = process.env.PORT
 
@@ -8,6 +9,7 @@ const cors = require('cors')
 const path = require('path')
 const app = express()
 const locationRouter = require('./controllers/location')
+const commentsRouter = require('./controllers/comments')
 
 // Middlewares - The middlewares' order is always important
 app.use(cors()) // public
@@ -18,6 +20,7 @@ app.use('/images', express.static('images'))
 app.use(express.static('../app/build'))
 
 app.use('/api/location', locationRouter)
+app.use('/api/comments', commentsRouter)
 
 app.get('/*', (request, response) => {
   response.sendFile(path.join(__dirname, '../app/build', 'index.html'))
