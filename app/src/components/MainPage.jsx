@@ -22,7 +22,7 @@ export default function MainPage (props) {
           <MeteoArea APIweatherData={props.APIweatherData} />
         </Grid>
         <Grid item xs={6}>
-          <FeedBack />
+          <FeedBack locState={props.APIweatherData.loc.state} />
         </Grid>
       </Grid>
     </>

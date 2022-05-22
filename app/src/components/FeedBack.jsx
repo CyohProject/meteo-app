@@ -12,7 +12,7 @@ const { Box, Tabs, Tab } = require('@mui/material')
  * It has 2 sections: alerts and comments
  * @returns
  */
-export default function FeedBack () {
+export default function FeedBack ({ locState }) {
   const [feedTab, setFeedTab] = useState(0)
 
   // Receive event of tab change and stablish the new one throught the state
@@ -32,7 +32,7 @@ export default function FeedBack () {
         <Alerts />
       </TabPanel>
       <TabPanel value={feedTab} index={1}>
-        <CommentsFeedBack />
+        <CommentsFeedBack locState={locState} />
       </TabPanel>
     </>
   )
