@@ -98,6 +98,7 @@ const buildDaily = (daily) => {
         day.temp.min
       ),
       // Basic data
+      name: day.dt,
       minTemperature: day.temp.min,
       maxTemperature: day.temp.max,
       rainProbability: day.pop,

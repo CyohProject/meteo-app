@@ -38,7 +38,7 @@ const showDaily = (daily) => {
     return (
       <Grid container key={index} sx={{ my: '0.4em' }}>
         <Grid item xs={2}>
-          <Box sx={boxStyle}> {index} </Box>
+          <Box sx={boxStyle}> {moment(day.name * 1000).format('ddd')} </Box>
         </Grid>
         <Grid item xs={2}>
           <Box>
