@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import './styles/App.css'
 import { currCoords, obtainLocInfoAll } from './reducers/locationReducer.js'
+import { initComments } from './reducers/commentsReducer'
 import logo from './assets/logo.png'
 import Menu from './components/Menu'
 import MainPage from './components/MainPage'
@@ -37,6 +38,12 @@ const App = () => {
     }
   }, [dispatch, coords])
 
+  useEffect(() => {
+    if (loc) {
+      dispatch(initComments(loc.state))
+    }
+  }, [dispatch, loc])
+
   return (
     <BrowserRouter>
       <header>
@@ -49,7 +56,7 @@ const App = () => {
         <Route path='/locationt' element={<LocGoogleMaps />} />
         <Route path='/maps' element={coords ? <Maps coords={coords} /> : null} />
         <Route path='/alerts' element={<Alerts />} />
-        <Route path='/comments' element={<Comments />} />
+        <Route path='/comments' element={loc ? <Comments locState={loc.state} /> : null} />
         <Route path='/aboutus' element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
