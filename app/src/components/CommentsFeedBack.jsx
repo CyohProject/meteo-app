@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 import moment from 'moment'
 import { IoIosSend } from 'react-icons/io'
 import { FaRegComments } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
+import { createComment } from '../reducers/commentsReducer'
 const { Grid } = require('@mui/material')
 
 /**
- * @todo Enlazar cada comentario con la localidad del usuario que lo escribió (Cataluña, por ejemplo)
  * @todo Usuario logeado o sin logear
- * @todo Guardar los comentarios
- * @todo Mostrar solamente los comentarios del estado de la localidad establecida
  *
  * @constant sendComment Add comment and after that set it back to blank
  * @constant calcTime Receives the date when the comment was made and compares with the current date
@@ -17,35 +16,39 @@ const { Grid } = require('@mui/material')
  * @return Container with all the comments and the input to send them
  */
 
-export default function Comments () {
+export default function CommentsFeedBack ({ locState }) {
+  const dispatch = useDispatch()
+  const comments = useSelector(state => state.comments)
+
   const [singleComment, setSingleComments] = useState('')
-  const [comments, setComments] = useState([])
+
   const currentTime = moment().format()
 
   const sendComment = (e) => {
     e.preventDefault()
+
     if (singleComment === '') {
       console.warn('Not a valid value')
     } else {
-      setComments([...comments, singleComment])
+      dispatch(createComment(singleComment, locState))
       setSingleComments('')
     }
   }
 
   const calcTime = (postDate) => {
-    const time = moment(postDate).from(currentTime)
-    return time
+    return moment(postDate).from(currentTime)
   }
 
-  const MapComments = (props) => {
-    const postDate = moment('20220516', 'YYYYMMDD') // fecha de ejemplo
-    const timeFrom = calcTime(postDate)
-    const commentsList = props.data.map((comment, i) => {
+  const MapComments = ({ data }) => {
+    const commentsList = data.map(comment => {
+      const postDate = moment(comment.date, 'YYYYMMDD')
+      const timeFrom = calcTime(postDate)
+
       return (
-        <li key={i}>
+        <li key={comment.id}>
           <ul className='mainliComments'>
             <li className='mainliTime'>{timeFrom}</li>
-            <li>{comment}</li>
+            <li>{comment.text}</li>
           </ul>
         </li>
       )
@@ -54,9 +57,7 @@ export default function Comments () {
     if (commentsList.length < 1) {
       return <p id='mainno-comments'>There are no comments at your location</p>
     } else {
-      return (
-        <ul className='mainulComments'>{commentsList}</ul>
-      )
+      return <ul className='mainulComments'>{commentsList}</ul>
     }
   }
 
