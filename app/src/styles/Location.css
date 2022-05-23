@@ -8,6 +8,10 @@
   margin-left: 3px;
 }
 
+#mui-2-label {
+  color: black;
+}
+
 /* MAP */
 .marker {
   display: none;
