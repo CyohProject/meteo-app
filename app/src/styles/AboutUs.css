@@ -1,5 +1,4 @@
 footer {
-    /* background-color: #131835; */
     background-image: linear-gradient(to right, rgb(87, 118, 255) , rgb(7, 3, 30));
     align-items: center;
     width: 100%;
@@ -8,6 +7,7 @@ footer {
     position: fixed;
     color: #7c7b7b;
     display: flex;
+    justify-content: space-between;
 }
 
 #footerText {
@@ -24,16 +24,30 @@ footer {
     align-items: center;
 }
 
-#githubIcon {
-    margin-left: 25px;
+#firstSection {
+    margin: revert;
 }
 
-#githubIcon>img{
+#secondSection {
+    max-width: fit-content;
+    margin: revert;
+}
+
+#thirdSection {
+    max-width: fit-content;
+}
+
+#githubIcon, #windyIcon, #openweatherIcon, #mongodbIcon, #herokuIcon {
+    margin-left: 10vh;
+}
+
+#githubIcon>img, #windyIcon>img, #openweatherIcon>img, #mongodbIcon>img, #herokuIcon>img{
     max-height: 25px;
     max-width: 25px;
 }
 
-#githubLink:link, #githubLink:visited {
+#githubLink:link, #githubLink:visited, #windyLink:link, #windyLink:visited, #openweatherLink:link, 
+#openweatherLink:visited, #mongodbLink:link, #mongodbLink:visited, #herokuLink:link, #herokuLink:visited {
     color: antiquewhite;
     text-decoration: none;
     margin-left: 5px;
