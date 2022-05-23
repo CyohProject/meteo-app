@@ -41,7 +41,7 @@ export default function CommentsFeedBack ({ locState }) {
 
   const MapComments = ({ data }) => {
     const commentsList = data.map(comment => {
-      const postDate = moment(comment.date, 'YYYYMMDD')
+      const postDate = moment(comment.date, 'YYYYMMDD HH:mm Z')
       const timeFrom = calcTime(postDate)
 
       return (
